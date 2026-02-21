@@ -30,6 +30,7 @@ db.sqlite3
 db.sqlite3-journal
 /media
 /staticfiles
+.env
 
 # IDE
 .vscode/
@@ -44,8 +45,3 @@ Thumbs.db
 
 # Template/Old files (moved to template folder)
 template/
-
-# Environment variables
-.env
-.env.local
-.env.production

@@ -1,69 +1,77 @@
 # Hawladar Agro - Project Amar
 
-A Django-based portfolio website for Hawladar Agro, featuring Bangladesh's first Shariah-compliant "Cow Hotel" investment platform. The site provides transparent, ethical investment opportunities with live monitoring capabilities.
+A Django-based portfolio website for Hawladar Agro, featuring Bangladesh's first Shariah-compliant "Cow Hotel" investment platform. The platform offers transparent, halal investment opportunities with live monitoring capabilities.
 
-## 🌟 Features
+## 🎨 Features
 
-- **Bilingual Support**: Bengali and English language toggle
-- **Shariah-Compliant Investment**: Ethical, halal investment platform
-- **Live Monitoring**: Real-time tracking of investments
-- **Responsive Design**: Mobile-first, fully responsive across all devices
-- **Modern UI/UX**: Clean, professional design with smooth animations
-- **Project Showcase**: Display of agricultural projects
-- **Blog Section**: News and updates
-- **Contact Form**: Easy communication channel
+### Core Functionality
+- **Bilingual Support**: Full Bengali and English language support with easy switching
+- **Shariah-Compliant Investment**: Ethical halal returns guaranteed
+- **Live Monitoring**: Real-time tracking of invested cattle
+- **Transparent Profit Sharing**: 3-way profit distribution model
+- **Government Certified**: Fully insured and verified operations
 
-## 🛠️ Tech Stack
-
-- **Backend**: Django 5.0.1
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Database**: SQLite (development), PostgreSQL (production recommended)
-- **API**: Django REST Framework
-- **Static Files**: Django's built-in static file handling
+### Technical Features
+- **Django 5.0.1**: Modern Python web framework
+- **Django REST Framework**: API capabilities for future integrations
+- **Responsive Design**: Mobile-first approach with tablet and desktop optimizations
+- **SEO Optimized**: Proper meta tags and semantic HTML structure
+- **Accessibility**: ARIA labels and keyboard navigation support
 
 ## 📁 Project Structure
 
 ```
 hawladarAgro_portfolio/
+├── manage.py                 # Django management script
+├── requirements.txt          # Python dependencies
+├── .env.example             # Environment variables template
+├── .gitignore               # Git ignore rules
+├── README.md                # This file
 ├── hawladar_agro/           # Main Django project settings
 │   ├── __init__.py
-│   ├── settings.py          # Project configuration
-│   ├── urls.py              # Main URL routing
 │   ├── asgi.py              # ASGI config
+│   ├── settings.py          # Project settings
+│   ├── urls.py              # Main URL configuration
 │   └── wsgi.py              # WSGI config
 ├── portfolio/               # Main Django app
+│   ├── __init__.py
+│   ├── admin.py             # Django admin configuration
+│   ├── apps.py              # App configuration
 │   ├── models.py            # Database models
 │   ├── views.py             # View functions
-│   ├── urls.py              # App URL routing
-│   ├── admin.py             # Django admin configuration
-│   ├── migrations/          # Database migrations
-│   └── templates/           # HTML templates
-│       ├── base.html        # Base template
-│       └── portfolio/       # App-specific templates
-│           ├── home.html
-│           ├── about.html
-│           ├── contact.html
-│           ├── blog_list.html
-│           ├── project_list.html
-│           └── ...
+│   ├── urls.py              # App URL configuration
+│   ├── tests.py             # Unit tests
+│   └── migrations/          # Database migrations
+├── portfolio/templates/     # HTML templates
+│   ├── base.html            # Base template
+│   └── portfolio/           # Page templates
+│       ├── home.html
+│       ├── about.html
+│       ├── contact.html
+│       ├── investment.html
+│       ├── project_list.html
+│       ├── project_detail.html
+│       ├── blog_list.html
+│       ├── blog_detail.html
+│       ├── gallery.html
+│       └── team_list.html
 ├── static/                  # Static files
-│   ├── css/                 # Stylesheets
-│   │   ├── styles.css
-│   │   └── custom-sections.css
-│   ├── js/                  # JavaScript files
-│   │   └── script.js
-│   └── images/              # Images
-├── manage.py                # Django management script
-├── requirements.txt         # Python dependencies
-├── .env.example             # Environment variables template
-└── README.md               # This file
+│   ├── css/
+│   │   ├── styles.css       # Main stylesheet
+│   │   └── custom-sections.css  # Custom section styles
+│   ├── js/
+│   │   └── script.js        # JavaScript functionality
+│   └── images/              # Image assets
+└── plans/                   # Project planning documents
+    ├── portfolio-improvement-plan.md
+    ├── ui-ux-audit-report.md
+    └── ui-ux-implementation-plan.md
 ```
 
 ## 🚀 Installation & Setup
 
 ### Prerequisites
-
-- Python 3.10 or higher
+- Python 3.8 or higher
 - pip (Python package manager)
 - Virtual environment (recommended)
 
@@ -81,7 +89,7 @@ cd hawladarAgro_portfolio
 python -m venv venv
 venv\Scripts\activate
 
-# Linux/Mac
+# macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
 ```
@@ -95,28 +103,27 @@ pip install -r requirements.txt
 ```bash
 # Copy the example environment file
 copy .env.example .env  # Windows
-cp .env.example .env     # Linux/Mac
+cp .env.example .env     # macOS/Linux
 
 # Edit .env and set your values:
-# - SECRET_KEY: Generate a new secret key
-# - DEBUG: True for development, False for production
-# - ALLOWED_HOSTS: Comma-separated list of allowed hosts
+# - Generate a secret key: python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+# - Set DEBUG=True for development, DEBUG=False for production
+# - Set ALLOWED_HOSTS=yourdomain.com,www.yourdomain.com for production
 ```
 
-5. **Generate a secret key** (for production)
+5. **Run database migrations**
 ```bash
-python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
-```
-
-6. **Run migrations**
-```bash
-python manage.py makemigrations
 python manage.py migrate
 ```
 
-7. **Create a superuser** (optional, for admin access)
+6. **Create a superuser (optional, for admin access)**
 ```bash
 python manage.py createsuperuser
+```
+
+7. **Collect static files (for production)**
+```bash
+python manage.py collectstatic
 ```
 
 8. **Run the development server**
@@ -125,116 +132,145 @@ python manage.py runserver
 ```
 
 9. **Access the application**
-- Open your browser and navigate to: `http://127.0.0.1:8000`
+- Open your browser and navigate to `http://127.0.0.1:8000`
 - Admin panel: `http://127.0.0.1:8000/admin`
 
-## 📝 Available Pages
+## 🎨 Design Specifications
 
-- **Home**: Landing page with hero section and featured content
-- **About**: Information about Hawladar Agro
-- **Projects**: Showcase of agricultural projects
-- **Investment**: Investment opportunities and details
-- **Blog**: News and updates
-- **Contact**: Contact form and information
-- **Team**: Team members and experts
-- **Gallery**: Image gallery
-
-## 🎨 Customization
-
-### Changing Colors
-
-Edit the CSS variables in `static/css/styles.css`:
+### Color Palette
 ```css
-:root {
-    --primary-green: #017B46;
-    --primary-yellow: #FECE00;
-    --text-dark: #333333;
-    /* ... other variables */
-}
+--primary-green: #017B46
+--primary-yellow: #FECE00
+--accent-yellow: #FFCC00
+--text-dark: #333333
+--text-light: #666666
+--white: #ffffff
 ```
 
-### Modifying Content
+### Typography
+- **Primary Font**: Inter, Open Sans, Hind Siliguri (Google Fonts)
+- **Language Support**: Bengali and English
+- **Responsive Typography**: Scales appropriately across devices
 
-- **Static Content**: Edit HTML templates in `portfolio/templates/`
-- **Dynamic Content**: Use Django Admin at `/admin` to manage models
+### Responsive Breakpoints
+- **Desktop**: 981px and above
+- **Tablet**: 768px - 980px
+- **Mobile**: 479px - 767px
+- **Small Mobile**: Below 479px
 
-### Adding New Pages
+## 📱 Pages & Sections
 
-1. Create a new template in `portfolio/templates/portfolio/`
-2. Add a view function in `portfolio/views.py`
-3. Add URL pattern in `portfolio/urls.py`
+1. **Home Page**
+   - Hero section with trust badges
+   - Featured projects showcase
+   - Investment opportunities
+   - Media appearances
+   - Latest blog posts
 
-## 🔧 Management Commands
+2. **Projects Page**
+   - Project listing with filters
+   - Individual project details
+   - Project gallery
 
+3. **About Page**
+   - Company information
+   - Team members
+   - Mission and values
+
+4. **Investment Page**
+   - Investment opportunities
+   - ROI information
+   - Investment process
+
+5. **Blog Page**
+   - Blog listing
+   - Individual blog posts
+   - Categories and tags
+
+6. **Contact Page**
+   - Contact form
+   - Location information
+   - Social media links
+
+7. **Gallery Page**
+   - Image gallery
+   - Video content
+
+## 🔧 Development
+
+### Running Tests
 ```bash
-# Run development server
-python manage.py runserver
+python manage.py test
+```
 
-# Create migrations
+### Creating New Migrations
+```bash
 python manage.py makemigrations
+```
 
-# Apply migrations
+### Applying Migrations
+```bash
 python manage.py migrate
+```
 
-# Create superuser
-python manage.py createsuperuser
-
-# Collect static files (for production)
-python manage.py collectstatic
-
-# Start Django shell
+### Django Shell
+```bash
 python manage.py shell
 ```
 
-## 🚀 Deployment
+## 📦 Dependencies
+
+See [`requirements.txt`](requirements.txt) for the complete list:
+- Django 5.0.1
+- Django REST Framework 3.14.0
+- psycopg2-binary 2.9.9 (PostgreSQL adapter)
+- Pillow 10.2.0 (Image handling)
+- django-environ 0.11.2 (Environment variables)
+
+## 🔒 Security
+
+- **Environment Variables**: Sensitive data stored in `.env` (not committed to git)
+- **DEBUG Mode**: Set to `False` in production
+- **ALLOWED_HOSTS**: Configure properly for production domains
+- **Secret Key**: Generate a unique secret key for production
+
+## 🌐 Deployment
+
+This Django project requires a proper hosting platform that supports Python/Django:
+
+### Recommended Platforms
+- **Render**: Free tier available, easy Django deployment
+- **Vercel**: Supports Django with some configuration
+- **Railway**: Simple deployment with PostgreSQL
+- **Heroku**: Industry-standard Django hosting
+- **PythonAnywhere**: Django-focused hosting
 
 ### Production Checklist
+- [ ] Set `DEBUG=False` in `.env`
+- [ ] Set `ALLOWED_HOSTS` to your domain
+- [ ] Generate a strong `SECRET_KEY`
+- [ ] Configure a production database (PostgreSQL recommended)
+- [ ] Set up static file serving (whitenoise or CDN)
+- [ ] Configure HTTPS/SSL
+- [ ] Set up logging
+- [ ] Configure email backend (if needed)
 
-Before deploying to production:
+## 🤝 Contributing
 
-1. **Set `DEBUG=False`** in `.env` file
-2. **Set a strong `SECRET_KEY`** in `.env` file
-3. **Configure `ALLOWED_HOSTS`** with your domain(s)
-4. **Use a production database** (PostgreSQL recommended)
-5. **Set up static file serving** (whitenoise or similar)
-6. **Configure HTTPS/SSL**
-7. **Set up proper logging**
-8. **Use environment variables** for all sensitive data
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Recommended Hosting Platforms
+## 📝 License
 
-- **Render**: https://render.com/ (Free tier available)
-- **Railway**: https://railway.app/ (Free tier available)
-- **Vercel**: https://vercel.com/ (With Django adapter)
-- **Heroku**: https://www.heroku.com/ (Paid)
-- **PythonAnywhere**: https://www.pythonanywhere.com/ (Free tier available)
-
-## 📊 Database Models
-
-The application includes the following models:
-- `Project`: Agricultural projects
-- `BlogPost`: Blog articles
-- `TeamMember`: Team members
-- `MediaAppearance`: Media features
-- `InvestmentOpportunity`: Investment options
-- `GalleryImage`: Gallery photos
-
-## 🌐 Browser Compatibility
-
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 📄 License
-
-This project is proprietary and confidential. All rights reserved.
+This project is proprietary software for Hawladar Agro. All rights reserved.
 
 ## 📞 Contact
 
-For questions or support, please contact the Hawladar Agro team.
+For inquiries about this project, please contact the development team.
 
 ---
 
-**Note**: This is a Django web application. Ensure all security best practices are followed when deploying to production.
+**Note**: This is a Django web application. It requires a Python/Django hosting environment and cannot be deployed to GitHub Pages (which only supports static sites).
