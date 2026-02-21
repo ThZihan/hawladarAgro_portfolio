@@ -1,7 +1,3 @@
-# Freshie Farm - Pixel Perfect Clone
-
-A pixel-perfect replica of the Freshie Farm website (https://www.freshie.farm/), built with pure HTML, CSS, and JavaScript. This clone faithfully reproduces the original site's layout, typography, color palette, spacing, and responsiveness across all viewports.
-
 ## 🎨 Design Specifications
 
 ### Typography
@@ -42,7 +38,7 @@ A pixel-perfect replica of the Freshie Farm website (https://www.freshie.farm/),
 ## 📁 Project Structure
 
 ```
-freshie-farm-clone/
+
 ├── index.html          # Main HTML structure
 ├── styles.css          # Complete styling with design tokens
 ├── script.js           # JavaScript interactivity
@@ -232,9 +228,6 @@ This is a pixel-perfect clone project. For improvements:
 3. Ensure code follows best practices
 4. Document any changes made
 
-## 📄 License
-
-This is a clone project for educational purposes. The original website content belongs to Freshie Farm.
 
 ## 👨‍💻 Development
 
@@ -245,10 +238,3 @@ Built with:
 
 No frameworks or libraries were used to ensure maximum performance and minimal dependencies.
 
-## 📞 Contact
-
-For questions about this clone project, please refer to the original website at https://www.freshie.farm/
-
----
-
-**Note**: This is a frontend clone only. Backend functionality, database connections, and server-side features are not included.
