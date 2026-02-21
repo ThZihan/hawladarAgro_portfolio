@@ -742,7 +742,7 @@
                         <svg viewBox="0 0 400 400" class="spie-chart">
                             <defs>
                                 <filter id="shadow-filter" x="-50%" y="-50%" width="200%" height="200%">
-                                    <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.25"/>
+                                    <feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity="0.12"/>
                                 </filter>
                                 <linearGradient id="investor-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" style="stop-color:#10B981"/>
@@ -781,22 +781,22 @@
                             
                             <!-- Labels -->
                             <g class="pie-labels">
-                                <!-- Investor Label -->
-                                <text x="280" y="120" class="pie-label pie-label-investor">
+                                <!-- Investor Label - Adjusted to match extended slice position -->
+                                <text x="282" y="118" class="pie-label pie-label-investor">
                                     <tspan class="pie-percent">33.33%</tspan>
-                                    <tspan class="pie-role" x="280" dy="22">Investor</tspan>
+                                    <tspan class="pie-role" x="282" dy="22">Investor</tspan>
                                 </text>
                                 
-                                <!-- Manager Label -->
-                                <text x="200" y="340" class="pie-label pie-label-manager" text-anchor="middle">
+                                <!-- Manager Label - Moved up from edge -->
+                                <text x="200" y="315" class="pie-label pie-label-manager" text-anchor="middle">
                                     <tspan class="pie-percent">33.33%</tspan>
                                     <tspan class="pie-role" x="200" dy="22">Manager</tspan>
                                 </text>
                                 
-                                <!-- Caretaker Label -->
-                                <text x="120" y="120" class="pie-label pie-label-caretaker" text-anchor="end">
+                                <!-- Caretaker Label - Moved right from edge -->
+                                <text x="135" y="105" class="pie-label pie-label-caretaker" text-anchor="end">
                                     <tspan class="pie-percent">33.33%</tspan>
-                                    <tspan class="pie-role" x="120" dy="22">Caretaker</tspan>
+                                    <tspan class="pie-role" x="135" dy="22">Caretaker</tspan>
                                 </text>
                             </g>
                             
@@ -1061,11 +1061,122 @@
 
     <!-- Shariah Compliance Section -->
     <section class="crowdfunding-section">
+        <div class="crowdfunding-bg">
+            <div class="crowdfunding-pattern"></div>
+            <div class="crowdfunding-gradient"></div>
+        </div>
         <div class="container">
-            <h2 class="section-title scroll-reveal" data-lang-en="Shariah Compliance" data-lang-bn="শরীয়াহ সম্মতা">শরীয়াহ সম্মতা</h2>
-            <div class="crowdfunding-content">
-                <p class="highlight-text scroll-reveal" data-lang-en="Project Amar operates under the principles of Mudarabah. Unlike a bank Fixed Deposit (FDR) where returns are guaranteed (Interest/Riba), here we share in both profits and risks." data-lang-bn="প্রজেক্ট আমার মুদারাবা নীতির ভিত্তে পরিচালিত। ব্যাংকের ফিক্সড ডিপাজিট (FDR)-এর মেতা এখানে মুনাফা সুনিশ্চিত নয় (যা সুদ বা রিবা হিসেবে গণ্য); বরং আমরা লাভ এবং ঝুঁকি উভয়ই ভাগ করে নিই।">প্রজেক্ট আমার মুদারাবা নীতির ভিত্তে পরিচালিত। ব্যাংকের ফিক্সড ডিপাজিট (FDR)-এর মেতা এখানে মুনাফা সুনিশ্চিত নয় (যা সুদ বা রিবা হিসেবে গণ্য); বরং আমরা লাভ এবং ঝুঁকি উভয়ই ভাগ করে নিই।</p>
-                <p class="scroll-reveal" data-lang-en="Disclaimer: While we strive for profit, the investor bears the financial loss of capital if it occurs due to market conditions, while the manager bears the loss of their labor." data-lang-bn="সতর্কথা: আমরা মুনাফার জন্য সর্বোচ্চ চেষ্টা করি, কিন্তুতু বাজার পরিস্থিতির কারণে ব্যবসায় লাকসান হলে শরীয়াহ নিয়ম অনুযায়ী বিনিয়োগকারীকে আর্থিক ক্ষতি বহন করতে হয় এবং ব্যবস্থাপক তাদের শ্রম ও সময়ের মূল্য হারান।">সতর্কথা: আমরা মুনাফার জন্য সর্বোচ্চ চেষ্টা করি, কিন্তুতু বাজার পরিস্থিতির কারণে ব্যবসায় লাকসান হলে শরীয়াহ নিয়ম অনুযায়ী বিনিয়োগকারীকে আর্থিক ক্ষতি বহন করতে হয় এবং ব্যবস্থাপক তাদের শ্রম ও সময়ের মূল্য হারান।</p>
+            <div class="crowdfunding-header scroll-reveal">
+                <span class="crowdfunding-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    <span data-lang-en="Islamic Investment Model" data-lang-bn="ইসলামিক বিনিয়োগ মডেল">ইসলামিক বিনিয়োগ মডেল</span>
+                </span>
+                <h2 class="section-title" data-lang-en="Shariah Compliant Investment" data-lang-bn="শরীয়াহ সম্মত বিনিয়োগ">শরীয়াহ সম্মত বিনিয়োগ</h2>
+                <p class="section-subtitle" data-lang-en="Invest with peace of mind through ethical, halal profit-sharing" data-lang-bn="নৈতিক ও হালাল মুনাফা ভাগাভাগির মাধ্যমে মনের শান্তিতে বিনিয়োগ করুন">নৈতিক ও হালাল মুনাফা ভাগাভাগির মাধ্যমে মনের শান্তিতে বিনিয়োগ করুন</p>
+            </div>
+            
+            <div class="crowdfunding-layout">
+                <!-- Left Column: Content -->
+                <div class="crowdfunding-content-wrapper">
+                    <div class="crowdfunding-content">
+                        <!-- Mudarabah Principle Card -->
+                        <div class="crowdfunding-card scroll-reveal">
+                            <div class="crowdfunding-card-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <h3 data-lang-en="Mudarabah Partnership Model" data-lang-bn="মুদারাবা অংশীদারিত্ব মডেল">মুদারাবা অংশীদারিত্ব মডেল</h3>
+                            <p class="highlight-text" data-lang-en="Project Amar operates under the principles of Mudarabah. Unlike a bank Fixed Deposit (FDR) where returns are guaranteed (Interest/Riba), here we share in both profits and risks." data-lang-bn="প্রজেক্ট আমার মুদারাবা নীতির ভিত্তে পরিচালিত। ব্যাংকের ফিক্সড ডিপাজিট (FDR)-এর মেতা এখানে মুনাফা সুনিশ্চিত নয় (যা সুদ বা রিবা হিসেবে গণ্য); বরং আমরা লাভ এবং ঝুঁকি উভয়ই ভাগ করে নিই।">প্রজেক্ট আমার মুদারাবা নীতির ভিত্তে পরিচালিত। ব্যাংকের ফিক্সড ডিপাজিট (FDR)-এর মেতা এখানে মুনাফা সুনিশ্চিত নয় (যা সুদ বা রিবা হিসেবে গণ্য); বরং আমরা লাভ এবং ঝুঁকি উভয়ই ভাগ করে নিই।</p>
+                        </div>
+
+                        <!-- Risk Disclaimer -->
+                        <div class="crowdfunding-disclaimer scroll-reveal">
+                            <div class="disclaimer-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="12" y1="8" x2="12" y2="12"/>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                                </svg>
+                            </div>
+                            <div class="disclaimer-content">
+                                <h4 data-lang-en="Important Note" data-lang-bn="গুরুত্বপূর্ণ নোট">গুরুত্বপূর্ণ নোট</h4>
+                                <p data-lang-en="While we strive for profit, the investor bears the financial loss of capital if it occurs due to market conditions, while the manager bears the loss of their labor." data-lang-bn="সতর্কথা: আমরা মুনাফার জন্য সর্বোচ্চ চেষ্টা করি, কিন্তুতু বাজার পরিস্থিতির কারণে ব্যবসায় লাকসান হলে শরীয়াহ নিয়ম অনুযায়ী বিনিয়োগকারীকে আর্থিক ক্ষতি বহন করতে হয় এবং ব্যবস্থাপক তাদের শ্রম ও সময়ের মূল্য হারান।">সতর্কথা: আমরা মুনাফার জন্য সর্বোচ্চ চেষ্টা করি, কিন্তুতু বাজার পরিস্থিতির কারণে ব্যবসায় লাকসান হলে শরীয়াহ নিয়ম অনুযায়ী বিনিয়োগকারীকে আর্থিক ক্ষতি বহন করতে হয় এবং ব্যবস্থাপক তাদের শ্রম ও সময়ের মূল্য হারান।</p>
+                            </div>
+                        </div>
+
+                        <!-- Trust Features -->
+                        <div class="crowdfunding-features scroll-reveal">
+                            <div class="crowdfunding-feature">
+                                <div class="feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <span data-lang-en="100% Shariah Compliant" data-lang-bn="১০০% শরীয়াহ সম্মত">১০০% শরীয়াহ সম্মত</span>
+                                </div>
+                            </div>
+                            <div class="crowdfunding-feature">
+                                <div class="feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <span data-lang-en="Transparent Profit Sharing" data-lang-bn="স্বচ্ছ মুনাফা ভাগাভাগি">স্বচ্ছ মুনাফা ভাগাভাগি</span>
+                                </div>
+                            </div>
+                            <div class="crowdfunding-feature">
+                                <div class="feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <span data-lang-en="Ethical & Halal Returns" data-lang-bn="নৈতিক ও হালাল আয়">নৈতিক ও হালাল আয়</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <div class="crowdfunding-cta scroll-reveal">
+                            <a href="{% url 'portfolio:investment' %}" class="btn btn-primary btn-lg" data-lang-en="Start Your Investment Journey" data-lang-bn="আপনার বিনিয়োগ যাত্রা শুরু করুন">
+                                <span>আপনার বিনিয়োগ যাত্রা শুরু করুন</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Image -->
+                <div class="crowdfunding-visual scroll-reveal-right">
+                    <div class="crowdfunding-image-wrapper">
+                        <div class="crowdfunding-image">
+                            <img src="{% static 'images/owner_with_cattle_2.png' %}" alt="Hawlader Agro Owner with Cattle" class="floating">
+                            <div class="crowdfunding-image-overlay"></div>
+                        </div>
+                        <!-- Floating Badge -->
+                        <div class="crowdfunding-badge-floating">
+                            <div class="badge-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <div class="badge-content">
+                                <span class="badge-label" data-lang-en="Investment Model" data-lang-bn="বিনিয়োগ মডেল">বিনিয়োগ মডেল</span>
+                                <span class="badge-value" data-lang-en="Mudarabah" data-lang-bn="মুদারাবা">মুদারাবা</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

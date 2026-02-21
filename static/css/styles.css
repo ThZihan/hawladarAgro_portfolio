@@ -2743,12 +2743,13 @@ section {
     position: relative;
     width: 100%;
     max-width: 450px;
+    padding: 20px;
 }
 
 .spie-chart {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.08));
 }
 
 /* Pie Chart Slices */
@@ -2759,14 +2760,14 @@ section {
 }
 
 .slice-path {
-    stroke: white;
-    stroke-width: 2;
+    stroke: rgba(255, 255, 255, 0.6);
+    stroke-width: 2.5;
     transition: all 0.3s ease;
 }
 
 /* Investor Slice - Extended/Exploded by default */
 .pie-slice-investor.pie-slice-extended {
-    transform: translate(-12px, -15px);
+    transform: translate(2px, -2px);
 }
 
 /* Hover effect - enlarge the slice */
@@ -2777,13 +2778,13 @@ section {
 
 .pie-slice.slice-hover {
     transform: scale(1.12);
-    filter: brightness(1.15) drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+    filter: brightness(1.15) drop-shadow(0 6px 15px rgba(0, 0, 0, 0.18));
     z-index: 20;
 }
 
 /* Keep extended position when hovering investor */
 .pie-slice-investor.pie-slice-extended.slice-hover {
-    transform: translate(-12px, -15px) scale(1.12);
+    transform: translate(2px, -2px) scale(1.12);
 }
 
 /* Pie Labels */
@@ -2829,13 +2830,13 @@ section {
 
 .pie-role {
     font-size: 13px;
-    font-weight: 500;
-    opacity: 0.9;
+    font-weight: 600;
+    opacity: 0.95;
 }
 
 /* Center Circle */
 .pie-center {
-    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .pie-center-text {
@@ -2886,45 +2887,8 @@ section {
     stroke: rgba(16, 185, 129, 0.3);
 }
 
-.pie-label {
-    font-family: var(--font-heading);
-    fill: white;
-    text-anchor: middle;
-}
-
-.pie-percent {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.pie-role {
-    font-size: 14px;
-    font-weight: 500;
-    opacity: 0.9;
-}
-
 .pie-label-highlighted {
     fill: white;
-}
-
-.pie-center {
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-}
-
-.pie-center-text {
-    font-family: var(--font-heading);
-    text-anchor: middle;
-}
-
-.pie-center-title {
-    font-size: 16px;
-    font-weight: 700;
-    fill: var(--text-primary);
-}
-
-.pie-center-subtitle {
-    font-size: 12px;
-    fill: var(--text-secondary);
 }
 
 /* Profit Cards */
@@ -3120,11 +3084,11 @@ section {
     
     /* Reduce extended offset on mobile */
     .pie-slice-investor.pie-slice-extended {
-        transform: translate(-8px, -10px);
+        transform: translate(1px, -1px);
     }
     
     .pie-slice-investor.pie-slice-extended.slice-hover {
-        transform: translate(-8px, -10px) scale(1.1);
+        transform: translate(1px, -1px) scale(1.1);
     }
     
     .profit-card {
@@ -3169,11 +3133,11 @@ section {
     
     /* Further reduce extended offset on small screens */
     .pie-slice-investor.pie-slice-extended {
-        transform: translate(-5px, -8px);
+        transform: translate(0px, 0px);
     }
     
     .pie-slice-investor.pie-slice-extended.slice-hover {
-        transform: translate(-5px, -8px) scale(1.08);
+        transform: translate(0px, 0px) scale(1.08);
     }
     
     .profit-card-title-group h3 {
