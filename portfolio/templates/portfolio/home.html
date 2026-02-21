@@ -1,0 +1,1083 @@
+{% extends 'base.html' %}
+
+{% block title %}Hawlader Agro | Project Amar{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-gradient-mesh"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <!-- Left Column: Text Content -->
+                <div class="hero-text">
+                    <!-- Trust Badges -->
+                    <div class="hero-badges">
+                        <span class="badge badge-shariah">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                            Shariah Compliant
+                        </span>
+                        <span class="badge badge-insured">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                            </svg>
+                            Fully Insured
+                        </span>
+                        <span class="badge badge-verified">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                            Government Certified
+                        </span>
+                    </div>
+                    
+                    <!-- Main Heading -->
+                    <h1 class="hero-title">
+                        <span class="title-static">প্রজেক্ট আমার:</span>
+                        <span class="title-typing" data-lang-en="Your Cow, Our Care, Shared Prosperity" data-lang-bn="আপনার গরু, আমাদের যত্ন, সমৃদ্ধি সবার"></span>
+                    </h1>
+                    
+                    <!-- Subtitle with Bullet Points -->
+                    <div class="hero-subtitle">
+                        <p class="hero-tagline" data-lang-en="The First Shariah-Compliant 'Cow Hotel' in Bangladesh" data-lang-bn="বাংলাদেশের প্রথম শরীয়াহ সম্মত 'কাউ হোটেল'">
+                            বাংলাদেশের প্রথম শরীয়াহ সম্মত 'কাউ হোটেল'
+                        </p>
+                        <ul class="hero-features">
+                            <li data-lang-en="Invest from home with live monitoring" data-lang-bn="ঘর বসে বিনিয়োগ, লাইভ মনিটরিং">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                </svg>
+                                ঘর বসে বিনিয়োগ, লাইভ মনিটরিং
+                            </li>
+                            <li data-lang-en="Transparent 3-way profit sharing" data-lang-bn="স্বচ্ছ ৩-মুখী মুনাফা বন্টন">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                                স্বচ্ছ ৩-মুখী মুনাফা বন্টন
+                            </li>
+                            <li data-lang-en="Ethical halal returns guaranteed" data-lang-bn="নিশ্চিত হালাল আয়">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                                নিশ্চিত হালাল আয়
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="hero-buttons">
+                        <a href="{% url 'portfolio:investment' %}" class="btn btn-primary btn-lg" data-lang-en="Start Halal Investment" data-lang-bn="হালাল বিনিয়োগ শুরু করুন">
+                            <span>হালাল বিনিয়োগ শুরু করুন</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#dashboard" class="btn btn-secondary btn-lg" data-lang-en="View Live Dashboard" data-lang-bn="লাইভ ড্যাশবোর্ড দেখুন">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                            <span>লাইভ ড্যাশবোর্ড দেখুন</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Social Proof -->
+                    <div class="hero-social-proof">
+                        <div class="social-proof-item">
+                            <span class="social-proof-number">500+</span>
+                            <span class="social-proof-label" data-lang-en="Happy Investors" data-lang-bn="সন্তুষ্ট বিনিয়োগকারী">সন্তুষ্ট বিনিয়োগকারী</span>
+                        </div>
+                        <div class="social-proof-divider"></div>
+                        <div class="social-proof-item">
+                            <span class="social-proof-number">৳৫০M+</span>
+                            <span class="social-proof-label" data-lang-en="Total Investment" data-lang-bn="মোট বিনিয়োগ">মোট বিনিয়োগ</span>
+                        </div>
+                        <div class="social-proof-divider"></div>
+                        <div class="social-proof-item">
+                            <span class="social-proof-number">98%</span>
+                            <span class="social-proof-label" data-lang-en="Success Rate" data-lang-bn="সাফল্যের হার">সাফল্যের হার</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Visual Element -->
+                <div class="hero-visual">
+                    <div class="hero-card hero-card-main">
+                        <div class="hero-card-header">
+                            <span class="hero-card-badge">Live</span>
+                            <span class="hero-card-title">আপনার গরুর অবস্থা</span>
+                        </div>
+                        <div class="hero-card-body">
+                            <div class="hero-card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">বর্তমান ওজন</span>
+                                    <span class="stat-value">৪৮৫ কেজি</span>
+                                    <span class="stat-change positive">+১২ কেজি</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">স্বাস্থ্য স্কোর</span>
+                                    <span class="stat-value">৯৫%</span>
+                                    <span class="stat-change positive">চমৎকার</span>
+                                </div>
+                            </div>
+                            <div class="hero-card-graph">
+                                <!-- Mini graph visualization -->
+                                <svg viewBox="0 0 200 80" class="mini-graph">
+                                    <defs>
+                                        <linearGradient id="graphGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" style="stop-color:var(--primary-green);stop-opacity:0.3" />
+                                            <stop offset="100%" style="stop-color:var(--primary-green);stop-opacity:0" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M0,60 Q20,55 40,50 T80,40 T120,35 T160,25 T200,20"
+                                          fill="none" stroke="var(--primary-green)" stroke-width="3"/>
+                                    <path d="M0,60 Q20,55 40,50 T80,40 T120,35 T160,25 T200,20 L200,80 L0,80 Z"
+                                          fill="url(#graphGradient)"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-card hero-card-secondary">
+                        <div class="hero-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 10l5 5-5 5"/>
+                                <path d="M4 4v7a4 4 0 0 0 4 4h12"/>
+                            </svg>
+                        </div>
+                        <div class="hero-card-text">
+                            <span class="hero-card-label">পরবর্তী ফিডিং</span>
+                            <span class="hero-card-value">আজ সন্ধ্যা ৬টা</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll-indicator">
+            <span class="scroll-text" data-lang-en="Scroll to explore" data-lang-bn="নিচে স্ক্রল করুন">নিচে স্ক্রল করুন</span>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Amar Location Section -->
+    <section class="project-section">
+        <div class="project-section-bg">
+            <div class="project-pattern"></div>
+            <div class="project-gradient"></div>
+        </div>
+        <div class="container">
+            <div class="project-header scroll-reveal">
+                <span class="project-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <span data-lang-en="Our Location" data-lang-bn="আমাদের অবস্থান">আমাদের অবস্থান</span>
+                </span>
+                <h2 class="section-title" data-lang-en="Project Amar Location" data-lang-bn="প্রজেক্ট আমার অবস্থান">প্রজেক্ট আমার অবস্থান</h2>
+                <p class="section-subtitle" data-lang-en="Discover where your investment grows" data-lang-bn="আপনার বিনিয়োগ যেখানে বিকশিত হয়">আপনার বিনিয়োগ যেখানে বিকশিত হয়</p>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-image-wrapper scroll-reveal-left">
+                    <div class="project-image">
+                        <img src="{% static 'images/map.png' %}" alt="Hawlader Agro Project Amar" class="floating">
+                        <div class="project-image-overlay"></div>
+                    </div>
+                    <div class="project-image-badge">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span>Patuakhali, Barishal</span>
+                    </div>
+                </div>
+                
+                <div class="project-info scroll-reveal-right">
+                    <div class="project-info-card">
+                        <div class="info-card-header">
+                            <div class="info-card-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </div>
+                            <h3 data-lang-en="Farm Overview" data-lang-bn="খামারের সংক্ষিপ্ত বিবরণ">খামারের সংক্ষিপ্ত বিবরণ</h3>
+                        </div>
+                        
+                        <div class="project-stats">
+                            <div class="project-stat-item">
+                                <div class="stat-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-label" data-lang-en="Location" data-lang-bn="অবস্থান">অবস্থান</span>
+                                    <span class="stat-value">পটুয়াখালী, বরিশাল</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-stat-item">
+                                <div class="stat-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                        <line x1="3" y1="9" x2="21" y2="9"/>
+                                        <line x1="9" y1="21" x2="9" y2="9"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-label" data-lang-en="Farm Size" data-lang-bn="খামারের পরিমাণ">খামারের পরিমাণ</span>
+                                    <span class="stat-value">১ বিঘা + ১ একর (লীজ)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-stat-item">
+                                <div class="stat-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-label" data-lang-en="Capacity" data-lang-bn="ক্যাপাসিটি">ক্যাপাসিটি</span>
+                                    <span class="stat-value">৫০ ফসবু</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-highlight">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <p data-lang-en="Professional cattle farming with modern facilities and expert care" data-lang-bn="আধুনিক সুবিধা এবং বিশেষজ্ঞ যত্ন সহ পেশাদার গবাদিপশু পালন">আধুনিক সুবিধা এবং বিশেষজ্ঞ যত্ন সহ পেশাদার গবাদিপশু পালন</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-social">
+                        <span class="social-label" data-lang-en="Follow our journey" data-lang-bn="আমাদের যাত্রা অনুসরণ করুন">আমাদের যাত্রা অনুসরণ করুন</span>
+                        <a href="https://www.facebook.com/HawladerAgro.bd" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            <span>HawladerAgro.bd</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Livestock Quality Section -->
+    <section class="livestock-section">
+        <div class="livestock-section-bg">
+            <div class="livestock-pattern"></div>
+            <div class="livestock-gradient"></div>
+        </div>
+        <div class="container">
+            <div class="livestock-header scroll-reveal">
+                <span class="livestock-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    <span data-lang-en="Premium Quality" data-lang-bn="প্রিমিয়াম মান">প্রিমিয়াম মান</span>
+                </span>
+                <h2 class="section-title" data-lang-en="Our Livestock Quality" data-lang-bn="আমাদের গরুর মান">আমাদের গরুর মান</h2>
+                <p class="section-subtitle" data-lang-en="Healthy, strong, and premium quality cattle raised with professional care" data-lang-bn="সুস্থ, সবল এবং প্রিমিয়াম মানের গরু পেশাদার যত্নে পালিত">সুস্থ, সবল এবং প্রিমিয়াম মানের গরু পেশাদার যত্নে পালিত</p>
+            </div>
+            
+            <div class="livestock-content">
+                <div class="livestock-image-wrapper scroll-reveal-left">
+                    <div class="livestock-image-card">
+                        <div class="livestock-image">
+                            <img src="{% static 'images/farm_cow.png' %}" alt="Hawlader Agro Healthy Cattle">
+                            <div class="livestock-image-overlay"></div>
+                        </div>
+                        <div class="livestock-image-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                            <span data-lang-en="Premium Breed" data-lang-bn="প্রিমিয়াম জাত">প্রিমিয়াম জাত</span>
+                        </div>
+                    </div>
+                    <div class="livestock-stats-card">
+                        <div class="livestock-stat-item">
+                            <span class="livestock-stat-number">95%</span>
+                            <span class="livestock-stat-label" data-lang-en="Health Score" data-lang-bn="স্বাস্থ্য স্কোর">স্বাস্থ্য স্কোর</span>
+                        </div>
+                        <div class="livestock-stat-divider"></div>
+                        <div class="livestock-stat-item">
+                            <span class="livestock-stat-number">50+</span>
+                            <span class="livestock-stat-label" data-lang-en="Healthy Cattle" data-lang-bn="সুস্থ গরু">সুস্থ গরু</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="livestock-info scroll-reveal-right">
+                    <div class="livestock-info-card">
+                        <div class="livestock-info-header">
+                            <div class="livestock-info-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <h3 data-lang-en="Quality Livestock Management" data-lang-bn="মানসম্মত পশুপালন">মানসম্মত পশুপালন</h3>
+                        </div>
+                        
+                        <p data-lang-en="At our farm, we raise healthy, strong, and high-quality cattle. Each cow is cared for professionally with modern facilities and expert supervision." data-lang-bn="আমাদের খামারে আমরা সুস্থ, সবল এবং উন্নত জাতের গরু পালন করি। প্রতিটি গরুর যত্ন নেওয়া হয় আধুনিক সুবিধা এবং বিশেষজ্ঞ তত্ত্বাবধানের মাধ্যমে।">আমাদের খামারে আমরা সুস্থ, সবল এবং উন্নত জাতের গরু পালন করি। প্রতিটি গরুর যত্ন নেওয়া হয় আধুনিক সুবিধা এবং বিশেষজ্ঞ তত্ত্বাবধানের মাধ্যমে।</p>
+                        
+                        <ul class="livestock-features">
+                            <li>
+                                <div class="feature-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <span class="feature-title" data-lang-en="Balanced Nutrition" data-lang-bn="সুষম খাদ্য ও পুষ্টি">সুষম খাদ্য ও পুষ্টি</span>
+                                    <span class="feature-desc" data-lang-en="Scientifically formulated TMR feed for optimal growth" data-lang-bn="সর্বোত্তম বৃদ্ধির জন্য বৈজ্ঞানিকভাবে তৈরি টিএমআর খাদ্য">সর্বোত্তম বৃদ্ধির জন্য বৈজ্ঞানিকভাবে তৈরি টিএমআর খাদ্য</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <span class="feature-title" data-lang-en="Regular Health Checkups" data-lang-bn="নিয়মিত স্বাস্থ্য পরীক্ষা">নিয়মিত স্বাস্থ্য পরীক্ষা</span>
+                                    <span class="feature-desc" data-lang-en="Veterinary supervision with digital health records" data-lang-bn="ডিজিটাল স্বাস্থ্য রেকর্ড সহ পশু চিকিৎসকের তত্ত্বাবধান">ডিজিটাল স্বাস্থ্য রেকর্ড সহ পশু চিকিৎসকের তত্ত্বাবধান</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                        <polyline points="9 22 9 12 15 12 15 22"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <span class="feature-title" data-lang-en="Clean Environment" data-lang-bn="পরিচ্ছন্ন ও সুশৃঙ্খল পরিবেশ">পরিচ্ছন্ন ও সুশৃঙ্খল পরিবেশ</span>
+                                    <span class="feature-desc" data-lang-en="Modern, hygienic sheds with proper ventilation" data-lang-bn="সঠিক বায়ুচলাচল সহ আধুনিক ও স্বাস্থ্যকর শেড">সঠিক বায়ুচলাচল সহ আধুনিক ও স্বাস্থ্যকর শেড</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="12" cy="7" r="4"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <span class="feature-title" data-lang-en="Expert Caretakers" data-lang-bn="অভিজ্ঞ পশুপালকদের তত্ত্বাবধান">অভিজ্ঞ পশুপালকদের তত্ত্বাবধান</span>
+                                    <span class="feature-desc" data-lang-en="Trained staff with years of experience in cattle care" data-lang-bn="গবাদিপশু যত্নে বছরের অভিজ্ঞতা সহ প্রশিক্ষিত কর্মী">গবাদিপশু যত্নে বছরের অভিজ্ঞতা সহ প্রশিক্ষিত কর্মী</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Features Section -->
+    <section id="dashboard" class="facilities-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-lang-en="Trust Through Technology - The Amar Dashboard" data-lang-bn="প্রযুক্তির মাধ্যমে আস্থা - আমার ড্যাশবোর্ড">প্রযুক্তির মাধ্যমে আস্থা - আমার ড্যাশবোর্ড</h2>
+            <div class="facilities-content">
+                <div class="facility-card scroll-reveal stagger-1">
+                    <div class="facility-icon">📹</div>
+                    <div class="facility-info">
+                        <h3 data-lang-en="Live CCTV Feed" data-lang-bn="লাইভ সিসিটিভি (CCTV)">লাইভ সিসিটিভি (CCTV)</h3>
+                        <p data-lang-en="24/7 visual access to your designated cattle pen. Verify your asset's existence and condition anytime." data-lang-bn="আপনার পশুর শেড-এর ২৪/৭ সরাসরি ভিডিও। যেকানা সময় আপনার সম্পদের অস্তিত্ব ও অবস্থা যাচাই করুন।">আপনার পশুর শেড-এর ২৪/৭ সরাসরি ভিডিও। যেকানা সময় আপনার সম্পদের অস্তিত্ব ও অবস্থা যাচাই করুন।</p>
+                    </div>
+                </div>
+                <div class="facility-card scroll-reveal stagger-2">
+                    <div class="facility-icon">💉</div>
+                    <div class="facility-info">
+                        <h3 data-lang-en="Digital Health Card" data-lang-bn="ডিজিটাল হেলথ কার্ড">ডিজিটাল হেলথ কার্ড</h3>
+                        <p data-lang-en="Scanned records of vaccines (FMD, Anthrax) and vet visits. Proof of proper medical care and biosecurity." data-lang-bn="টিকা (তড়কা, ক্ষুরা) এবং ডাক্তারের ভিজিটর রেকর্ড। পশুর সঠিক চিকিৎসা ও স্বাস্থ্য সুরক্ষা নিশ্চিতর প্রমাণ।">টিকা (তড়কা, ক্ষুরা) এবং ডাক্তারের ভিজিটর রেকর্ড। পশুর সঠিক চিকিৎসা ও স্বাস্থ্য সুরক্ষা নিশ্চিতর প্রমাণ।</p>
+                    </div>
+                </div>
+                <div class="facility-card scroll-reveal stagger-3">
+                    <div class="facility-icon">📊</div>
+                    <div class="facility-info">
+                        <h3 data-lang-en="Weight Graph" data-lang-bn="ওজন গ্রাফ">ওজন গ্রাফ</h3>
+                        <p data-lang-en="Bi-weekly weight measurements uploaded by digital scale. Track the exact growth trajectory of your investment." data-lang-bn="ডিজিটাল স্কেল মাপা পশুর ওজন প্রতি দুই সপ্তাহ আপডেট। আপনার বিনিয়োগের সঠিক বৃদ্ধি পয়েবক্ষণ করুন।">ডিজিটাল স্কেল মাপা পশুর ওজন প্রতি দুই সপ্তাহ আপডেট। আপনার বিনিয়োগের সঠিক বৃদ্ধি পয়েবক্ষণ করুন।</p>
+                    </div>
+                </div>
+                <div class="facility-card scroll-reveal stagger-4">
+                    <div class="facility-icon">📋</div>
+                    <div class="facility-info">
+                        <h3 data-lang-en="Feed Log" data-lang-bn="খাদ্য তালিকা">খাদ্য তালিকা</h3>
+                        <p data-lang-en="Daily breakdown of TMR (Total Mixed Ration) consumption. Transparency on where your operational costs are going." data-lang-bn="দিনক টিএমআর (TMR) বা সুষম খাবার গ্রহণের বিবরণ। আপনার পশুর পেছনে কতটুকু খরচ হচ্ছ তার স্বচ্ছ হিসাব।">দিনক টিএমআর (TMR) বা সুষম খাবার গ্রহণের বিবরণ। আপনার পশুর পেছনে কতটুকু খরচ হচ্ছ তার স্বচ্ছ হিসাব।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder & Vision Section -->
+    <section class="trust-section">
+        <div class="trust-section-bg">
+            <div class="trust-pattern"></div>
+            <div class="trust-gradient"></div>
+        </div>
+        <div class="container">
+            <div class="trust-header scroll-reveal">
+                <span class="trust-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    <span data-lang-en="Expert Leadership" data-lang-bn="বিশেষজ্ঞ নেতৃত্ব">বিশেষজ্ঞ নেতৃত্ব</span>
+                </span>
+                <h2 class="section-title" data-lang-en="Founder & Vision" data-lang-bn="প্রতিষ্ঠাতা ও দর্শন">প্রতিষ্ঠাতা ও দর্শন</h2>
+                <p class="section-subtitle" data-lang-en="Government-certified expertise meets modern business excellence" data-lang-bn="সরকারি সার্টিফিকেট সহ আধুনিক ব্যবসায়িক দক্ষতা">সরকারি সার্টিফিকেট সহ আধুনিক ব্যবসায়িক দক্ষতা</p>
+            </div>
+            
+            <div class="trust-content">
+                <div class="trust-image-wrapper scroll-reveal-left">
+                    <div class="trust-image-card">
+                        <div class="trust-image">
+                            <img src="{% static 'images/our_expert.png' %}" alt="Founder with Cattle">
+                            <div class="trust-image-overlay"></div>
+                        </div>
+                        <div class="trust-image-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <span data-lang-en="Naeem Billah" data-lang-bn="নাইম বিল্লাহ">নাইম বিল্লাহ</span>
+                        </div>
+                    </div>
+                    <div class="trust-credentials-card">
+                        <div class="trust-credential-item">
+                            <div class="credential-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <div class="credential-content">
+                                <span class="credential-title" data-lang-en="YTC Certified" data-lang-bn="YTC সার্টিফাইড">YTC সার্টিফাইড</span>
+                                <span class="credential-desc" data-lang-en="Youth Training Center, Savar" data-lang-bn="যুব প্রশিক্ষণ কেন্দ্র, সাভার">যুব প্রশিক্ষণ কেন্দ্র, সাভার</span>
+                            </div>
+                        </div>
+                        <div class="trust-credential-item">
+                            <div class="credential-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <div class="credential-content">
+                                <span class="credential-title" data-lang-en="Livestock Specialist" data-lang-bn="গবাদিপশু বিশেষজ্ঞ">গবাদিপশু বিশেষজ্ঞ</span>
+                                <span class="credential-desc" data-lang-en="3-Month Residential Training" data-lang-bn="৩ মাস আবাসিক প্রশিক্ষণ">৩ মাস আবাসিক প্রশিক্ষণ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trust-info scroll-reveal-right">
+                    <div class="trust-info-card">
+                        <div class="trust-info-header">
+                            <div class="trust-info-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+                            <h3 data-lang-en="About Our Founder" data-lang-bn="আমাদের প্রতিষ্ঠাতা সম্পর্কে">আমাদের প্রতিষ্ঠাতা সম্পর্কে</h3>
+                        </div>
+                        
+                        <p class="highlight-text" data-lang-en="Hawlader Agro is led by Naeem Billah, a certified agro-specialist trained at the prestigious Youth Training Center (YTC), Savar." data-lang-bn="হাওলাদার এগ্রা-এর নেতৃত্বে আছেন নাইম বিল্লাহ, যিনি যুব প্রশিক্ষণ কেন্দ্র (YTC), সাভার থেকে প্রশিক্ষত একজন সার্টিফাইড কৃষি বিশেষজ্ঞ।">হাওলাদার এগ্রা-এর নেতৃত্বে আছেন নাইম বিল্লাহ, যিনি যুব প্রশিক্ষণ কেন্দ্র (YTC), সাভার থেকে প্রশিক্ষত একজন সার্টিফাইড কৃষি বিশেষজ্ঞ।</p>
+                        
+                        <div class="trust-divider"></div>
+                        
+                        <p data-lang-en="Having completed the rigorous 3-month residential curriculum in Livestock Rearing & Primary Veterinary Treatment, our leadership combines government-standard technical training with modern business acumen. Unlike typical aggregators, we are not just intermediaries—we are actual farmers." data-lang-bn="তিনি গবাদিপশু পালন ও প্রাথমিক চিকিৎসার ওপর ৩ মাস মেয়াদী কোর্সের আবাসিক প্রশিক্ষণ সম্পন্ন করেছেন। সাধারণ এগ্রেগটরেদের মতো আমরা কেবল মধ্যস্থতাকারী নই, আমরা নিজেরাই খামারি।">তিনি গবাদিপশু পালন ও প্রাথমিক চিকিৎসার ওপর ৩ মাস মেয়াদী কোর্সের আবাসিক প্রশিক্ষণ সম্পন্ন করেছেন। সাধারণ এগ্রেগটরেদের মতো আমরা কেবল মধ্যস্থতাকারী নই, আমরা নিজেরাই খামারি।</p>
+                        
+                        <p class="trust-quote" data-lang-en="Our founder's expertise spans from formulating Total Mixed Ration (TMR) feeds for maximum weight gain to implementing biosecurity protocols that prevent FMD (Foot & Mouth Disease). We don't just manage money; we manage life." data-lang-bn="আমাদের প্রতিষ্ঠাতার টিএমআর (TMR) বা সুষম মিশ্র পশুখাদ্য তৈরি থেকে শুরু করে ক্ষুরারোগ (FMD) প্রতিরোধ বায়োসিকিউরিটি মেইনটেইন করার ব্যবস্থা রয়েছ অভিজ্ঞতা। আমরা কেবল আপনার অর্থের ব্যবস্থাপনাই করি না, আমরা আপনার সম্পদের যত্ন নিই।">আমাদের প্রতিষ্ঠাতার টিএমআর (TMR) বা সুষম মিশ্র পশুখাদ্য তৈরি থেকে শুরু করে ক্ষুরারোগ (FMD) প্রতিরোধ বায়োসিকিউরিটি মেইনটেইন করার ব্যবস্থা রয়েছ অভিজ্ঞতা। আমরা কেবল আপনার অর্থের ব্যবস্থাপনাই করি না, আমরা আপনার সম্পদের যত্ন নিই।</p>
+                        
+                        <div class="trust-cta">
+                            <a href="{% url 'portfolio:about' %}" class="btn btn-primary" data-lang-en="Learn More About Us" data-lang-bn="আমাদের সম্পর্কে আরও জানুন">
+                                <span>আমাদের সম্পর্কে আরও জানুন</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Grid -->
+    {% if featured_projects %}
+    <section class="featured-projects-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">আমাদের বর্তমান প্রজেক্ট</h2>
+            <div class="projects-grid">
+                {% for project in featured_projects %}
+                <div class="project-card scroll-reveal stagger-{{ forloop.counter }}">
+                    <div class="project-card-image">
+                        {% if project.hero_image %}
+                        <img src="{{ project.hero_image.url }}" alt="{{ project.name }}">
+                        {% else %}
+                        <img src="{% static 'images/placeholder-project.svg' %}" alt="{{ project.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="project-card-content">
+                        <h3>{{ project.name }}</h3>
+                        <p class="project-location">{{ project.location }}</p>
+                        <p class="project-acreage">{{ project.acreage }} একর</p>
+                        <a href="{% url 'portfolio:project_detail' project.slug %}" class="btn btn-sm">বিস্তারিত দেখুন</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                <a href="{% url 'portfolio:project_list' %}" class="btn btn-outline">সব প্রজেক্ট দেখুন</a>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Investment Models Section -->
+    <section class="investment-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" data-lang-en="Choose Your Path" data-lang-bn="আপনার পছন্দ নির্বাচন করুন">আপনার পছন্দ নির্বাচন করুন</span>
+                <h2 class="section-title" data-lang-en="Investment Models" data-lang-bn="বিনিয়োগ মডেল">বিনিয়োগ মডেল</h2>
+                <p class="section-subtitle" data-lang-en="Select the investment model that suits your financial goals" data-lang-bn="আপনার আর্থিক লক্ষ্যের সাথে মিল রেখে বিনিয়োগ মডেল নির্বাচন করুন">
+                    আপনার আর্থিক লক্ষ্যের সাথে মিল রেখে বিনিয়োগ মডেল নির্বাচন করুন
+                </p>
+            </div>
+            
+            <div class="investment-content">
+                <!-- Model A Card -->
+                <div class="investment-card investment-card-featured scroll-reveal stagger-1">
+                    <div class="investment-card-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                        <span>জনপ্রিয় পছন্দ</span>
+                    </div>
+                    
+                    <div class="investment-card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="investment-card-title" data-lang-en="Model A: Eid Fattening Project" data-lang-bn="মডেল এ: ঈদ মাটাতাজাকরণ প্রকল্প">
+                        মডেল এ: ঈদ মাটাতাজাকরণ প্রকল্প
+                    </h3>
+                    
+                    <span class="investment-card-tag" data-lang-en="Short-Term" data-lang-bn="স্বল্পমেয়াদী">স্বল্পমেয়াদী</span>
+                    
+                    <div class="investment-card-stats">
+                        <div class="stat-row">
+                            <span class="stat-label" data-lang-en="Duration" data-lang-bn="মেয়াদ">মেয়াদ</span>
+                            <span class="stat-value">৩-৪ মাস</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label" data-lang-en="Projected ROI" data-lang-bn="সম্ভাব্য মুনাফা">সম্ভাব্য মুনাফা</span>
+                            <span class="stat-value highlight">১৫-২৫%</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label" data-lang-en="Daily Weight Gain" data-lang-bn="দৈনিক ওজন বৃদ্ধি">দৈনিক ওজন বৃদ্ধি</span>
+                            <span class="stat-value">৮০০গ্রাম - ১.২কেজি</span>
+                        </div>
+                    </div>
+                    
+                    <p class="investment-card-description" data-lang-en="Maximize returns with the Eid cycle through Mudarabah profit sharing structure" data-lang-bn="ঈদ চক্রের মাধ্যমে সর্বোচ্চ লাভ। কাঠামো: মুদারাবা (লাভ-ক্ষত বন্টন)">
+                        ঈদ চক্রের মাধ্যমে সর্বোচ্চ লাভ। কাঠামো: মুদারাবা (লাভ-ক্ষত বন্টন)
+                    </p>
+                    
+                    <ul class="investment-card-features">
+                        <li data-lang-en="Fast returns" data-lang-bn="দ্রুত রিটার্ন">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            দ্রুত রিটার্ন
+                        </li>
+                        <li data-lang-en="Lower risk profile" data-lang-bn="কম ঝুঁকি">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            কম ঝুঁকি
+                        </li>
+                        <li data-lang-en="Ideal for beginners" data-lang-bn="নতুনদের জন্য আদর্শ">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            নতুনদের জন্য আদর্শ
+                        </li>
+                    </ul>
+                    
+                    <div class="investment-card-footer">
+                        <div class="investment-progress">
+                            <div class="progress-label">
+                                <span data-lang-en="Available Slots" data-lang-bn="উপলব্ধ স্লট">উপলব্ধ স্লট</span>
+                                <span>১২/৫০</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 76%"></div>
+                            </div>
+                        </div>
+                        <a href="{% url 'portfolio:investment' %}" class="btn btn-primary btn-block" data-lang-en="Invest Now" data-lang-bn="বিনিয়োগ করুন">
+                            বিনিয়োগ করুন
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Model B Card -->
+                <div class="investment-card scroll-reveal stagger-2">
+                    <div class="investment-card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="investment-card-title" data-lang-en="Model B: Heritage Dairy Project" data-lang-bn="মডেল বি: হেরিটেজ ডেইরি ও প্রজনন প্রকল্প">
+                        মডেল বি: হেরিটেজ ডেইরি ও প্রজনন প্রকল্প
+                    </h3>
+                    
+                    <span class="investment-card-tag" data-lang-en="Long-Term" data-lang-bn="দীর্ঘমেয়াদী">দীর্ঘমেয়াদী</span>
+                    
+                    <div class="investment-card-stats">
+                        <div class="stat-row">
+                            <span class="stat-label" data-lang-en="Duration" data-lang-bn="মেয়াদ">মেয়াদ</span>
+                            <span class="stat-value">২-৩ বছর</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label" data-lang-en="Monthly Income" data-lang-bn="মাসিক আয়">মাসিক আয়</span>
+                            <span class="stat-value highlight">৳২,০০০+</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label" data-lang-en="Final Return" data-lang-bn="চূড়ান্ত রিটার্ন">চূড়ান্ত রিটার্ন</span>
+                            <span class="stat-value">বাছুর/গাভী বিক্রি</span>
+                        </div>
+                    </div>
+                    
+                    <p class="investment-card-description" data-lang-en="Sustainable wealth through dairy and breeding with long-term Mudarabah structure" data-lang-bn="ডেইরি ও প্রজননের মাধ্যমে টেকসই সম্পদ। কাঠামো: দীর্ঘমেয়াদী মুদারাবা">
+                        ডেইরি ও প্রজননের মাধ্যমে টেকসই সম্পদ। কাঠামো: দীর্ঘমেয়াদী মুদারাবা
+                    </p>
+                    
+                    <ul class="investment-card-features">
+                        <li data-lang-en="Passive monthly income" data-lang-bn="মাসিক আয়">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            মাসিক আয়
+                        </li>
+                        <li data-lang-en="Asset appreciation" data-lang-bn="সম্পদের মূল্যবৃদ্ধি">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            সম্পদের মূল্যবৃদ্ধি
+                        </li>
+                        <li data-lang-en="Breeding returns" data-lang-bn="প্রজনন লাভ">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            প্রজনন লাভ
+                        </li>
+                    </ul>
+                    
+                    <div class="investment-card-footer">
+                        <div class="investment-progress">
+                            <div class="progress-label">
+                                <span data-lang-en="Available Slots" data-lang-bn="উপলব্ধ স্লট">উপলব্ধ স্লট</span>
+                                <span>৮/৩০</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 73%"></div>
+                            </div>
+                        </div>
+                        <a href="{% url 'portfolio:investment' %}" class="btn btn-outline btn-block" data-lang-en="Invest Now" data-lang-bn="বিনিয়োগ করুন">
+                            বিনিয়োগ করুন
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3-Way Profit Split Section -->
+    <section class="profit-split-section">
+        <div class="profit-split-bg">
+            <div class="profit-pattern"></div>
+            <div class="profit-gradient"></div>
+        </div>
+        <div class="container">
+            <div class="profit-split-header scroll-reveal">
+                <span class="profit-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <span data-lang-en="Fair & Transparent" data-lang-bn="স্বচ্ছ ও ন্যায্য">স্বচ্ছ ও ন্যায্য</span>
+                </span>
+                <h2 class="section-title" data-lang-en="The 3-Way Profit Split" data-lang-bn="৩-মুখী মুনাফা বন্টন">৩-মুখী মুনাফা বন্টন</h2>
+                <p class="section-subtitle" data-lang-en="Equal sharing for sustainable growth" data-lang-bn="টেকসই প্রবৃদ্ধির জন্য সমান বন্টন">টেকসই প্রবৃদ্ধির জন্য সমান বন্টন</p>
+            </div>
+            
+            <div class="profit-split-content">
+                <!-- Exploded Pie Chart -->
+                <div class="pie-chart-container scroll-reveal-left">
+                    <div class="pie-chart-wrapper">
+                        <svg viewBox="0 0 400 400" class="spie-chart">
+                            <defs>
+                                <filter id="shadow-filter" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.25"/>
+                                </filter>
+                                <linearGradient id="investor-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10B981"/>
+                                    <stop offset="100%" style="stop-color:#059669"/>
+                                </linearGradient>
+                                <linearGradient id="manager-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3B82F6"/>
+                                    <stop offset="100%" style="stop-color:#2563EB"/>
+                                </linearGradient>
+                                <linearGradient id="caretaker-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#F59E0B"/>
+                                    <stop offset="100%" style="stop-color:#D97706"/>
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Manager Slice (1/3 = 120°) - Bottom Right -->
+                            <g class="pie-slice pie-slice-manager" filter="url(#shadow-filter)">
+                                <path d="M200,200 L338.57,280 A160,160 0 0,1 61.43,280 Z" 
+                                      fill="url(#manager-gradient)" 
+                                      class="slice-path"/>
+                            </g>
+                            
+                            <!-- Caretaker Slice (1/3 = 120°) - Left -->
+                            <g class="pie-slice pie-slice-caretaker" filter="url(#shadow-filter)">
+                                <path d="M200,200 L61.43,280 A160,160 0 0,1 200,40 Z" 
+                                      fill="url(#caretaker-gradient)" 
+                                      class="slice-path"/>
+                            </g>
+                            
+                            <!-- Investor Slice (1/3 = 120°) - Extended/Exploded - Top -->
+                            <g class="pie-slice pie-slice-investor pie-slice-extended" filter="url(#shadow-filter)">
+                                <path d="M200,200 L200,40 A160,160 0 0,1 338.57,280 Z" 
+                                      fill="url(#investor-gradient)" 
+                                      class="slice-path slice-highlighted"/>
+                            </g>
+                            
+                            <!-- Labels -->
+                            <g class="pie-labels">
+                                <!-- Investor Label -->
+                                <text x="280" y="120" class="pie-label pie-label-investor">
+                                    <tspan class="pie-percent">33.33%</tspan>
+                                    <tspan class="pie-role" x="280" dy="22">Investor</tspan>
+                                </text>
+                                
+                                <!-- Manager Label -->
+                                <text x="200" y="340" class="pie-label pie-label-manager" text-anchor="middle">
+                                    <tspan class="pie-percent">33.33%</tspan>
+                                    <tspan class="pie-role" x="200" dy="22">Manager</tspan>
+                                </text>
+                                
+                                <!-- Caretaker Label -->
+                                <text x="120" y="120" class="pie-label pie-label-caretaker" text-anchor="end">
+                                    <tspan class="pie-percent">33.33%</tspan>
+                                    <tspan class="pie-role" x="120" dy="22">Caretaker</tspan>
+                                </text>
+                            </g>
+                            
+                            <!-- Center Circle -->
+                            <circle cx="200" cy="200" r="55" fill="white" class="pie-center"/>
+                            <text x="200" y="195" text-anchor="middle" class="pie-center-text">
+                                <tspan class="pie-center-title">Profit</tspan>
+                                <tspan class="pie-center-subtitle" x="200" dy="22">Sharing</tspan>
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Profit Distribution Cards -->
+                <div class="profit-cards scroll-reveal-right">
+                    <!-- Investor Card - Highlighted -->
+                    <div class="profit-card profit-card-investor profit-card-highlighted">
+                        <div class="profit-card-glow"></div>
+                        <div class="profit-card-header">
+                            <div class="profit-card-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+                            <div class="profit-card-title-group">
+                                <h3 data-lang-en="You (Investor)" data-lang-bn="আপনি (বিনিয়োগকারী)">আপনি (বিনিয়োগকারী)</h3>
+                                <span class="profit-card-role" data-lang-en="Rab-ul-Maal" data-lang-bn="রব-উল-মাল">রব-উল-মাল</span>
+                            </div>
+                            <div class="profit-card-percent">33.33%</div>
+                        </div>
+                        <div class="profit-card-body">
+                            <p data-lang-en="Capital Provider. You take the financial risk. Your capital buys the calf, the feed, and the medicine." data-lang-bn="পুঁজি বিনিয়োগকারী। আপনি আর্থিক ঝুঁকি নেন। আপনার পুঁজি বাছুর, খাদ্য এবং ওষুধ কেনে।">পুঁজি বিনিয়োগকারী। আপনি আর্থিক ঝুঁকি নেন। আপনার পুঁজি বাছুর, খাদ্য এবং ওষুধ কেনে।</p>
+                        </div>
+                        <div class="profit-card-badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <span data-lang-en="Your Share" data-lang-bn="আপনার অংশ">আপনার অংশ</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Manager Card -->
+                    <div class="profit-card profit-card-manager">
+                        <div class="profit-card-header">
+                            <div class="profit-card-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </div>
+                            <div class="profit-card-title-group">
+                                <h3 data-lang-en="Hawlader Agro" data-lang-bn="হাওলাদার এগ্রো">হাওলাদার এগ্রো</h3>
+                                <span class="profit-card-role" data-lang-en="Mudarib (Manager)" data-lang-bn="মুদারিব (ব্যবস্থাপক)">মুদারিব (ব্যবস্থাপক)</span>
+                            </div>
+                            <div class="profit-card-percent">33.33%</div>
+                        </div>
+                        <div class="profit-card-body">
+                            <p data-lang-en="Manager. We provide the facility (The 'Hotel'), the veterinary expertise, the feed logistics, and the market access." data-lang-bn="ব্যবস্থাপক। আমরা সুবিধা ('হোটেল'), ভেটেরিনারি দক্ষতা, খাদ্য লজিস্টিক্স এবং বাজার সুযোগ প্রদান করি।">ব্যবস্থাপক। আমরা সুবিধা ('হোটেল'), ভেটেরিনারি দক্ষতা, খাদ্য লজিস্টিক্স এবং বাজার সুযোগ প্রদান করি।</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Caretaker Card -->
+                    <div class="profit-card profit-card-caretaker">
+                        <div class="profit-card-header">
+                            <div class="profit-card-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="profit-card-title-group">
+                                <h3 data-lang-en="Caretaker" data-lang-bn="যত্নকারী">যত্নকারী</h3>
+                                <span class="profit-card-role" data-lang-en="Labor Partner" data-lang-bn="শ্রম অংশীদার">শ্রম অংশীদার</span>
+                            </div>
+                            <div class="profit-card-percent">33.33%</div>
+                        </div>
+                        <div class="profit-card-body">
+                            <p data-lang-en="Labor Partner. The specific staff member assigned to your cow receives a direct profit share. This aligns their motivation with your asset's health." data-lang-bn="আপনার গরুর জন্য নির্দিষ্ট কর্মী সরাসরি মুনাফার ভাগ পান। এটি তাদের উৎসাহকে আপনার সম্পদের স্বাস্থ্যের সাথে সামঞ্জস্য করে।">আপনার গরুর জন্য নির্দিস্ট কর্মী সরাসরি মুনাফার ভাগ পান। এটি তাদের উৎসাহকে আপনার সম্পদের স্বাস্থ্যের সাথে সামঞ্জস্য করে।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Management Section -->
+    <section class="investment-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-lang-en="Shariah-Compliant Risk Management" data-lang-bn="শরীয়াহ সম্মত ঝুঁকি ব্যবস্থাপনা">শরীয়াহ সম্মত ঝুঁকি ব্যবস্থাপনা</h2>
+            <div class="investment-content">
+                <div class="investment-card scroll-reveal stagger-1">
+                    <div class="icon">🛡️</div>
+                    <h3 data-lang-en="Mortality Risk" data-lang-bn="মৃত্যু ঝুঁকি">মৃত্যু ঝুঁকি</h3>
+                    <p data-lang-en="Comprehensive Insurance coverage protects your capital in case of animal death (excluding natural calamities)." data-lang-bn="অনাকালক্ষত মৃত্যুজনিত ক্ষতি পূরণর জন্য প্রতিটি পশুর বীমা (Insurance) করা থাকে।">অনাকালক্ষত মৃত্যুজনিত ক্ষতি পূরণর জন্য প্রতিটি পশুর বীমা (Insurance) করা থাকে।</p>
+                </div>
+                <div class="investment-card scroll-reveal stagger-2">
+                    <div class="icon">📊</div>
+                    <h3 data-lang-en="Market Risk" data-lang-bn="বাজার ঝুঁকি">বাজার ঝুঁকি</h3>
+                    <p data-lang-en="We mitigate price volatility by establishing forward-contracts with institutional meat buyers." data-lang-bn="আমরা বড় মাংস প্রক্রিয়াজাতকরণ প্রতিষ্ঠানের সাথে আগাম চুক্তি (Forward Contract) করার মাধ্যমে দামের ওঠানামা নিয়ন্ত্রণ করি।">আমরা বড় মাংস প্রক্রিয়াজাতকরণ প্রতিষ্ঠানের সাথে আগাম চুক্তি (Forward Contract) করার মাধ্যমে দামের ওঠানামা নিয়ন্ত্রণ করি।</p>
+                </div>
+                <div class="investment-card scroll-reveal stagger-3">
+                    <div class="icon">🔒</div>
+                    <h3 data-lang-en="Operational Risk" data-lang-bn="পরিচালনাগত ঝুঁকি">পরিচালনাগত ঝুঁকি</h3>
+                    <p data-lang-en="Our 'Cow Hotel' is a closed bio-secure facility, drastically reducing the risk of theft or contagious diseases compared to open grazing." data-lang-bn="আমাদের 'কাউ হোটেল' একটি আবদ্ধ বায়ো-সিকিউর জান, ফলে উন্মুক্ত চারণভূমির তুলনায় এখানে চুরি বা সংক্রামক রোগের ঝুঁকি অনেক কম।">আমাদের 'কাউ হোটেল' একটি আবদ্ধ বায়ো-সিকিউর জান, ফলে উন্মুক্ত চারণভূমির তুলনায় এখানে চুরি বা সংক্রামক রোগের ঝুঁকি অনেক কম।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Opportunities -->
+    {% if investment_opportunities %}
+    <section class="investment-opportunities-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">বিনিয়োগের সুযোগ</h2>
+            <div class="opportunities-grid">
+                {% for opportunity in investment_opportunities %}
+                <div class="opportunity-card scroll-reveal stagger-{{ forloop.counter }}">
+                    <div class="opportunity-header">
+                        <h3>{{ opportunity.title }}</h3>
+                        <span class="badge badge-success">সক্রিয়</span>
+                    </div>
+                    <div class="opportunity-body">
+                        <p>{{ opportunity.description }}</p>
+                        <div class="opportunity-stats">
+                            <div class="stat">
+                                <span class="stat-label">মোট শেয়ার</span>
+                                <span class="stat-value">{{ opportunity.total_shares }}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">উপলব্ধ শেয়ার</span>
+                                <span class="stat-value">{{ opportunity.available_shares }}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">প্রতি শেয়ার</span>
+                                <span class="stat-value">৳{{ opportunity.price_per_share }}</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: {{ opportunity.percentage_sold }}%"></div>
+                        </div>
+                        <p class="progress-text">{{ opportunity.percentage_sold|floatformat:0 }}% বিক্রি হয়েছে</p>
+                    </div>
+                    <div class="opportunity-footer">
+                        <a href="{% url 'portfolio:investment' %}" class="btn btn-primary btn-block">বিনিয়োগ করুন</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Media Section -->
+    {% if media_appearances %}
+    <section class="media-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">মিডিয়াতে আমরা</h2>
+            <div class="media-logos">
+                {% for media in media_appearances %}
+                <div class="media-logo-item scroll-reveal stagger-{{ forloop.counter }}">
+                    {% if media.logo %}
+                    <img src="{{ media.logo.url }}" alt="{{ media.outlet_name }}">
+                    {% else %}
+                    <span>{{ media.outlet_name }}</span>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Team Section -->
+    {% if featured_team %}
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">আমাদের দল</h2>
+            <div class="team-grid">
+                {% for member in featured_team %}
+                <div class="team-card scroll-reveal stagger-{{ forloop.counter }}">
+                    <div class="team-photo">
+                        {% if member.photo %}
+                        <img src="{{ member.photo.url }}" alt="{{ member.name }}">
+                        {% else %}
+                        <img src="{% static 'images/our_expert.jpg' %}" alt="{{ member.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="team-info">
+                        <h3>{{ member.name }}</h3>
+                        <p class="team-role">{{ member.role_display|default:member.get_role_display }}</p>
+                        {% if member.bio %}
+                        <p class="team-bio">{{ member.bio|truncatewords:20 }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                <a href="{% url 'portfolio:team_list' %}" class="btn btn-outline">সব সদস্য দেখুন</a>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Gallery Section -->
+    {% if gallery_images %}
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">গ্যালারি</h2>
+            <div class="gallery-grid">
+                {% for image in gallery_images %}
+                <div class="gallery-item scroll-reveal stagger-{{ forloop.counter }}">
+                    <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                    <div class="gallery-overlay">
+                        <h4>{{ image.title }}</h4>
+                        {% if image.description %}
+                        <p>{{ image.description|truncatewords:10 }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                <a href="{% url 'portfolio:gallery' %}" class="btn btn-outline">সব ছবি দেখুন</a>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Blog Section -->
+    {% if latest_blogs %}
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">আমাদের লেখা</h2>
+            <div class="blog-grid">
+                {% for post in latest_blogs %}
+                <article class="blog-card scroll-reveal stagger-{{ forloop.counter }}">
+                    <div class="blog-image">
+                        {% if post.featured_image %}
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        {% else %}
+                        <img src="{% static 'images/placeholder-blog.svg' %}" alt="{{ post.title }}">
+                        {% endif %}
+                    </div>
+                    <div class="blog-content">
+                        <h3>{{ post.title }}</h3>
+                        <p class="blog-excerpt">{{ post.excerpt }}</p>
+                        <a href="{% url 'portfolio:blog_detail' post.slug %}" class="btn btn-sm">আরও পড়ুন</a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                <a href="{% url 'portfolio:blog_list' %}" class="btn btn-outline">সব লেখা দেখুন</a>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Shariah Compliance Section -->
+    <section class="crowdfunding-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-lang-en="Shariah Compliance" data-lang-bn="শরীয়াহ সম্মতা">শরীয়াহ সম্মতা</h2>
+            <div class="crowdfunding-content">
+                <p class="highlight-text scroll-reveal" data-lang-en="Project Amar operates under the principles of Mudarabah. Unlike a bank Fixed Deposit (FDR) where returns are guaranteed (Interest/Riba), here we share in both profits and risks." data-lang-bn="প্রজেক্ট আমার মুদারাবা নীতির ভিত্তে পরিচালিত। ব্যাংকের ফিক্সড ডিপাজিট (FDR)-এর মেতা এখানে মুনাফা সুনিশ্চিত নয় (যা সুদ বা রিবা হিসেবে গণ্য); বরং আমরা লাভ এবং ঝুঁকি উভয়ই ভাগ করে নিই।">প্রজেক্ট আমার মুদারাবা নীতির ভিত্তে পরিচালিত। ব্যাংকের ফিক্সড ডিপাজিট (FDR)-এর মেতা এখানে মুনাফা সুনিশ্চিত নয় (যা সুদ বা রিবা হিসেবে গণ্য); বরং আমরা লাভ এবং ঝুঁকি উভয়ই ভাগ করে নিই।</p>
+                <p class="scroll-reveal" data-lang-en="Disclaimer: While we strive for profit, the investor bears the financial loss of capital if it occurs due to market conditions, while the manager bears the loss of their labor." data-lang-bn="সতর্কথা: আমরা মুনাফার জন্য সর্বোচ্চ চেষ্টা করি, কিন্তুতু বাজার পরিস্থিতির কারণে ব্যবসায় লাকসান হলে শরীয়াহ নিয়ম অনুযায়ী বিনিয়োগকারীকে আর্থিক ক্ষতি বহন করতে হয় এবং ব্যবস্থাপক তাদের শ্রম ও সময়ের মূল্য হারান।">সতর্কথা: আমরা মুনাফার জন্য সর্বোচ্চ চেষ্টা করি, কিন্তুতু বাজার পরিস্থিতির কারণে ব্যবসায় লাকসান হলে শরীয়াহ নিয়ম অনুযায়ী বিনিয়োগকারীকে আর্থিক ক্ষতি বহন করতে হয় এবং ব্যবস্থাপক তাদের শ্রম ও সময়ের মূল্য হারান।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <div class="location-content">
+                <img src="{% static 'images/logo.jpg' %}" alt="Hawlader Agro" class="floating scroll-reveal">
+                <p class="scroll-reveal" data-lang-en="Project Amar is located in Patuakhali, Barishal, Bangladesh" data-lang-bn="প্রজেক্ট আমার অবস্থিত হাওলাদার এগ্রা, পটুয়াখালী, বরিশাল, বাংলাদেশ">প্রজেক্ট আমার অবস্থিত হাওলাদার এগ্রা, পটুয়াখালী, বরিশাল, বাংলাদেশ</p>
+                <a href="https://www.facebook.com/HawladerAgro.bd" target="_blank" class="btn btn-primary scroll-reveal" data-lang-en="Follow us on Facebook" data-lang-bn="ফেসবুকে আমাদের অনুসরণ করুন">ফেসবুকে আমাদের অনুসরণ করুন</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

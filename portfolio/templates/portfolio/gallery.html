@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}গ্যালারি | হাওলাদার এগ্রো{% endblock %}
+
+{% block content %}
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>গ্যালারি</h1>
+            <p>আমাদের খামারের ছবি ও ভিডিও</p>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-page-section">
+        <div class="container">
+            <div class="gallery-grid">
+                {% for image in images %}
+                <div class="gallery-item">
+                    <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                    <div class="gallery-overlay">
+                        <h4>{{ image.title }}</h4>
+                        {% if image.description %}
+                        <p>{{ image.description|truncatewords:15 }}</p>
+                        {% endif %}
+                        <span class="gallery-category">{{ image.get_category_display }}</span>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="empty-state">
+                    <p>কোন ছবি পাওয়া যায়নি।</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            {% if is_paginated %}
+            <div class="pagination">
+                <div class="pagination-links">
+                    {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link">আগে</a>
+                    {% endif %}
+                    
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                        <span class="pagination-link active">{{ num }}</span>
+                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <a href="?page={{ num }}" class="pagination-link">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="pagination-link">পরে</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

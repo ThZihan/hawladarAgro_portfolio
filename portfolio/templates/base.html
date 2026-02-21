@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="bn-BD" data-lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>{% block title %}Hawlader Agro | Project Amar{% endblock %}</title>
+    <meta name="robots" content="max-image-preview:large">
+    {% block meta_tags %}{% endblock %}
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom-sections.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="main-navigation">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="{% url 'portfolio:home' %}" aria-label="Hawlader Agro Home">
+                        <img src="{% static 'images/logo.png' %}" alt="Hawlader Agro" class="logo-light">
+                        <img src="{% static 'images/logo.png' %}" alt="Hawlader Agro" class="logo-dark">
+                    </a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <ul class="nav-menu">
+                    <li>
+                        <a href="{% url 'portfolio:home' %}" class="nav-link active" data-lang-en="Home" data-lang-bn="হোম">
+                            <span>হোম</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'portfolio:project_list' %}" class="nav-link" data-lang-en="Projects" data-lang-bn="প্রজেক্ট">
+                            <span>প্রজেক্ট</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'portfolio:about' %}" class="nav-link" data-lang-en="About Us" data-lang-bn="আমাদের সম্পর্কে">
+                            <span>আমাদের সম্পর্কে</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'portfolio:investment' %}" class="nav-link" data-lang-en="Investment" data-lang-bn="বিনিয়োগ">
+                            <span>বিনিয়োগ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'portfolio:blog_list' %}" class="nav-link" data-lang-en="Blog" data-lang-bn="ব্লগ">
+                            <span>ব্লগ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'portfolio:contact' %}" class="nav-link" data-lang-en="Contact" data-lang-bn="যোগাযোগ">
+                            <span>যোগাযোগ</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Header Actions -->
+                <div class="nav-actions">
+                    <!-- Language Toggle -->
+                    <div class="lang-dropdown">
+                        <button class="lang-toggle" id="langToggle" aria-label="Change Language">
+                            <span class="lang-current">বাং</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m6 9 6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="lang-menu">
+                            <button class="lang-option" data-lang="bn">বাংলা</button>
+                            <button class="lang-option" data-lang="en">English</button>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <a href="{% url 'portfolio:investment' %}" class="btn btn-primary btn-sm nav-cta" data-lang-en="Invest Now" data-lang-bn="বিনিয়োগ করুন">
+                        বিনিয়োগ করুন
+                    </a>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <div class="mobile-logo">
+                    <img src="{% static 'images/logo.png' %}" alt="Hawlader Agro">
+                </div>
+                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-menu-body">
+                <ul class="mobile-nav-links">
+                    <li><a href="{% url 'portfolio:home' %}" data-lang-en="Home" data-lang-bn="হোম">হোম</a></li>
+                    <li><a href="{% url 'portfolio:project_list' %}" data-lang-en="Projects" data-lang-bn="প্রজেক্ট">প্রজেক্ট</a></li>
+                    <li><a href="{% url 'portfolio:about' %}" data-lang-en="About Us" data-lang-bn="আমাদের সম্পর্কে">আমাদের সম্পর্কে</a></li>
+                    <li><a href="{% url 'portfolio:investment' %}" data-lang-en="Investment" data-lang-bn="বিনিয়োগ">বিনিয়োগ</a></li>
+                    <li><a href="{% url 'portfolio:blog_list' %}" data-lang-en="Blog" data-lang-bn="ব্লগ">ব্লগ</a></li>
+                    <li><a href="{% url 'portfolio:contact' %}" data-lang-en="Contact" data-lang-bn="যোগাযোগ">যোগাযোগ</a></li>
+                </ul>
+                <div class="mobile-menu-cta">
+                    <a href="{% url 'portfolio:investment' %}" class="btn btn-primary btn-block" data-lang-en="Start Investment" data-lang-bn="বিনিয়োগ শুরু করুন">বিনিয়োগ শুরু করুন</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{% static 'images/logo.png' %}" alt="Hawlader Agro">
+                </div>
+                <div class="footer-links">
+                    <h4 data-lang-en="Quick Links" data-lang-bn="দ্রুত লিংক">দ্রুত লিংক</h4>
+                    <ul>
+                        <li><a href="{% url 'portfolio:home' %}" data-lang-en="Home" data-lang-bn="হোম">হোম</a></li>
+                        <li><a href="{% url 'portfolio:project_list' %}" data-lang-en="Projects" data-lang-bn="প্রজেক্ট">প্রজেক্ট</a></li>
+                        <li><a href="{% url 'portfolio:about' %}" data-lang-en="About Us" data-lang-bn="আমাদের সম্পর্কে">আমাদের সম্পর্কে</a></li>
+                        <li><a href="{% url 'portfolio:contact' %}" data-lang-en="Contact" data-lang-bn="যোগাযোগ">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-lang-en="Contact Us" data-lang-bn="যোগাযোগ করুন">যোগাযোগ করুন</h4>
+                    <p data-lang-en="Patuakhali, Barishal, Bangladesh" data-lang-bn="পটুয়াখালী, বরিশাল, বাংলাদেশ">পটুয়াখালী, বরিশাল, বাংলাদেশ</p>
+                    <p data-lang-en="Email: info@hawladaragro.com" data-lang-bn="ইমেইল: info@hawladaragro.com">ইমেইল: info@hawladaragro.com</p>
+                    <p data-lang-en="Phone: +880 1XXX-XXXXXX" data-lang-bn="ফোন: +880 1XXX-XXXXXX">ফোন: +880 1XXX-XXXXXX</p>
+                </div>
+                <div class="footer-social">
+                    <h4 data-lang-en="Social Media" data-lang-bn="সোশ্যাল মিডিয়া">সোশ্যাল মিডিয়া</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/HawladerAgro.bd" target="_blank" class="social-icon" aria-label="Facebook" data-lang-en="Facebook" data-lang-bn="ফেসবুক">ফেসবুক</a>
+                        <a href="#" class="social-icon" aria-label="YouTube" data-lang-en="YouTube" data-lang-bn="ইউটিউব">ইউটিউব</a>
+                        <a href="#" class="social-icon" aria-label="Instagram" data-lang-en="Instagram" data-lang-bn="ইনস্টাগ্রাম">ইনস্টাগ্রাম</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-en="&copy; {% now "Y" %} Hawlader Agro. All Rights Reserved." data-lang-bn="&copy; {% now "Y" %} হাওলাদার এগ্রো। সর্বস্বত্ব সংরক্ষিত।">&copy; {% now "Y" %} হাওলাদার এগ্রো। সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" aria-label="Scroll to top">
+        <span>↑</span>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}আমাদের প্রজেক্ট | হাওলাদার এগ্রো{% endblock %}
+
+{% block content %}
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>আমাদের প্রজেক্ট</h1>
+            <p>আমাদের সকল কৃষি প্রজেক্টের বিস্তারিত তথ্য</p>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-page-section">
+        <div class="container">
+            <div class="projects-grid">
+                {% for project in projects %}
+                <div class="project-card">
+                    <div class="project-card-image">
+                        {% if project.hero_image %}
+                        <img src="{{ project.hero_image.url }}" alt="{{ project.name }}">
+                        {% else %}
+                        <img src="{% static 'images/placeholder-project.svg' %}" alt="{{ project.name }}">
+                        {% endif %}
+                        <span class="project-status badge badge-{{ project.status }}">{{ project.get_status_display }}</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>{{ project.name }}</h3>
+                        <p class="project-location">{{ project.location }}</p>
+                        <p class="project-acreage">{{ project.acreage }} একর</p>
+                        <p class="project-description">{{ project.description|truncatewords:25 }}</p>
+                        <div class="project-details">
+                            {% if project.crops %}
+                            <span class="detail-tag">🌾 {{ project.crops }}</span>
+                            {% endif %}
+                            {% if project.livestock %}
+                            <span class="detail-tag">🐄 {{ project.livestock }}</span>
+                            {% endif %}
+                        </div>
+                        <a href="{% url 'portfolio:project_detail' project.slug %}" class="btn btn-primary">বিস্তারিত দেখুন</a>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="empty-state">
+                    <p>কোন প্রজেক্ট পাওয়া যায়নি।</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            {% if is_paginated %}
+            <div class="pagination">
+                <div class="pagination-links">
+                    {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link" data-lang-en="Previous" data-lang-bn="আগে">আগে</a>
+                    {% endif %}
+                     
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                        <span class="pagination-link active">{{ num }}</span>
+                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <a href="?page={{ num }}" class="pagination-link">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                     
+                    {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="pagination-link" data-lang-en="Next" data-lang-bn="পরে">পরে</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

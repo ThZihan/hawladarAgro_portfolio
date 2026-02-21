@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}Investment | Hawlader Agro{% endblock %}
+
+{% block content %}
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-lang-en="Investment Opportunities" data-lang-bn="বিনিয়োগের সুযোগ">বিনিয়োগের সুযোগ</h1>
+            <p data-lang-en="Invest with us and earn halal returns" data-lang-bn="আমাদের সাথে বিনিয়োগ করে লাভবান হন">আমাদের সাথে বিনিয়োগ করে লাভবান হন</p>
+        </div>
+    </section>
+
+    <!-- Investment Info -->
+    <section class="investment-info-section">
+        <div class="container">
+            <div class="investment-info">
+                <h2 data-lang-en="Shariah-Compliant Investment Model" data-lang-bn="শরীয়াহ সম্মত বিনিয়োগ মডেল">শরীয়াহ সম্মত বিনিয়োগ মডেল</h2>
+                <p class="highlight-text" data-lang-en="Project Amar operates under the principles of Mudarabah (Profit Sharing). We share in both profits and risks." data-lang-bn="প্রজেক্ট আমার মুদারাবা নীতির ভিত্তে পরিচালিত। আমরা লাভ এবং ঝুঁকি উভয়ই ভাগ করে নিই।">প্রজেক্ট আমার মুদারাবা নীতির ভিত্তে পরিচালিত। আমরা লাভ এবং ঝুঁকি উভয়ই ভাগ করে নিই।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Opportunities -->
+    {% if opportunities %}
+    <section class="investment-opportunities-section">
+        <div class="container">
+            <h2 data-lang-en="Current Investment Opportunities" data-lang-bn="বর্তমান বিনিয়োগের সুযোগসমূহ">বর্তমান বিনিয়োগের সুযোগসমূহ</h2>
+            <div class="opportunities-grid">
+                {% for opportunity in opportunities %}
+                <div class="opportunity-card">
+                    <div class="opportunity-header">
+                        <h3>{{ opportunity.title }}</h3>
+                        {% if opportunity.is_active %}
+                        <span class="badge badge-success" data-lang-en="Active" data-lang-bn="সক্রিয়">সক্রিয়</span>
+                        {% else %}
+                        <span class="badge badge-secondary" data-lang-en="Closed" data-lang-bn="বন্ধ">বন্ধ</span>
+                        {% endif %}
+                    </div>
+                    <div class="opportunity-body">
+                        <p>{{ opportunity.description }}</p>
+                        <div class="opportunity-stats">
+                            <div class="stat">
+                                <span class="stat-label" data-lang-en="Total Shares" data-lang-bn="মোট শেয়ার">মোট শেয়ার</span>
+                                <span class="stat-value">{{ opportunity.total_shares }}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label" data-lang-en="Available Shares" data-lang-bn="উপলব্ধ শেয়ার">উপলব্ধ শেয়ার</span>
+                                <span class="stat-value">{{ opportunity.available_shares }}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label" data-lang-en="Per Share" data-lang-bn="প্রতি শেয়ার">প্রতি শেয়ার</span>
+                                <span class="stat-value">৳{{ opportunity.price_per_share }}</span>
+                            </div>
+                        </div>
+                        {% if opportunity.minimum_investment %}
+                        <p class="minimum-investment"><strong data-lang-en="Minimum Investment:" data-lang-bn="সর্বনিম্ন বিনিয়োগ:">সর্বনিম্ন বিনিয়োগ:</strong> ৳{{ opportunity.minimum_investment }}</p>
+                        {% endif %}
+                        {% if opportunity.expected_return %}
+                        <p class="expected-return"><strong data-lang-en="Expected Return:" data-lang-bn="প্রত্যাশিত রিটার্ন:">প্রত্যাশিত রিটার্ন:</strong> {{ opportunity.expected_return }}</p>
+                        {% endif %}
+                        {% if opportunity.investment_duration %}
+                        <p class="investment-duration"><strong data-lang-en="Investment Duration:" data-lang-bn="বিনিয়োগ সময়কাল:">বিনিয়োগ সময়কাল:</strong> {{ opportunity.investment_duration }}</p>
+                        {% endif %}
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: {{ opportunity.percentage_sold }}%"></div>
+                        </div>
+                        <p class="progress-text">{{ opportunity.percentage_sold|floatformat:0 }}% <span data-lang-en="Sold" data-lang-bn="বিক্রি">বিক্রি</span> <span data-lang-en="out of" data-lang-bn="হয়েছে">হয়েছে</span></p>
+                    </div>
+                    <div class="opportunity-footer">
+                        {% if opportunity.is_active %}
+                        <a href="#contact" class="btn btn-primary btn-block" data-lang-en="Invest Now" data-lang-bn="বিনিয়োগ করুন">বিনিয়োগ করুন</a>
+                        {% else %}
+                        <button class="btn btn-secondary btn-block" disabled data-lang-en="Closed" data-lang-bn="বন্ধ">বন্ধ</button>
+                        {% endif %}
+                    </div>
+                </div>
+                {% empty %}
+                <div class="empty-state">
+                    <p data-lang-en="No investment opportunities available at this time." data-lang-bn="বর্তমানে কোন বিনিয়োগের সুযোগ নেই।">বর্তমানে কোন বিনিয়োগের সুযোগ নেই।</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- How to Invest -->
+    <section class="how-to-invest-section">
+        <div class="container">
+            <h2 data-lang-en="How to Invest?" data-lang-bn="কিভাবে বিনিয়োগ করবেন?">কিভাবে বিনিয়োগ করবেন?</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">১</div>
+                    <h3 data-lang-en="Choose Investment Model" data-lang-bn="বিনিয়োগ মডেল নির্বাচন করুন">বিনিয়োগ মডেল নির্বাচন করুন</h3>
+                    <p data-lang-en="Choose between Eid Fattening (Short-Term) or Heritage Dairy (Long-Term) based on your preference." data-lang-bn="আপনার পছন্দের মতে ঈদ মাটাতাজাকরণ (স্বল্পমেয়াদী) বা হেরিটেজ ডেইরি (দীর্ঘমেয়াদী) মডেল নির্বাচন করুন।">আপনার পছন্দের মতে ঈদ মাটাতাজাকরণ (স্বল্পমেয়াদী) বা হেরিটেজ ডেইরি (দীর্ঘমেয়াদী) মডেল নির্বাচন করুন।</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">২</div>
+                    <h3 data-lang-en="Contact Us" data-lang-bn="যোগাযোগ করুন">যোগাযোগ করুন</h3>
+                    <p data-lang-en="Contact us to get detailed information and start your investment journey." data-lang-bn="আমাদের সাথে যোগাযোগ করুন এবং বিস্তারিত তথ্য নিন।">আমাদের সাথে যোগাযোগ করুন এবং বিস্তারিত তথ্য নিন।</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">৩</div>
+                    <h3 data-lang-en="Complete Investment" data-lang-bn="বিনিয়োগ সম্পন্ন করুন">বিনিয়োগ সম্পন্ন করুন</h3>
+                    <p data-lang-en="Complete your investment and receive your share certificate." data-lang-bn="আপনার বিনিয়োগ সম্পন্ন করুন এবং শেয়ার পান।">আপনার বিনিয়োগ সম্পন্ন করুন এবং শেয়ার পান।</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">৪</div>
+                    <h3 data-lang-en="Monitor & Earn" data-lang-bn="মনিটর ও লাভ উপভোগ করুন">মনিটর ও লাভ উপভোগ করুন</h3>
+                    <p data-lang-en="Monitor your investment through our Live Dashboard and enjoy halal returns." data-lang-bn="আমাদের লাইভ ড্যাশবোর্ডের মাধ্যমে আপনার বিনিয়োগ মনিটর করুন এবং হালাল লাভ উপভোগ করুন।">আমাদের লাইভ ড্যাশবোর্ডের মাধ্যমে আপনার বিনিয়োগ মনিটর করুন এবং হালাল লাভ উপভোগ করুন।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

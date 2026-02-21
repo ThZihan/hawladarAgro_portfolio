@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }} | হাওলাদার এগ্রো{% endblock %}
+
+{% block meta_tags %}
+    <meta name="description" content="{{ post.meta_description|default:post.excerpt }}">
+    <meta property="og:title" content="{{ post.meta_title|default:post.title }}">
+    <meta property="og:description" content="{{ post.meta_description|default:post.excerpt }}">
+    {% if post.featured_image %}
+    <meta property="og:image" content="{{ post.featured_image.url }}">
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <!-- Page Header -->
+    <section class="page-header blog-detail-header">
+        <div class="container">
+            <p class="blog-date">{{ post.published_at|date:"d F, Y" }}</p>
+            <h1>{{ post.title }}</h1>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-detail-section">
+        <div class="container">
+            <div class="blog-detail-content">
+                {% if post.featured_image %}
+                <div class="blog-featured-image">
+                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+                
+                <div class="blog-body">
+                    {{ post.content|linebreaks }}
+                </div>
+            </div>
+            
+            <div class="blog-navigation">
+                <div class="nav-links">
+                    <a href="{% url 'portfolio:blog_list' %}" class="btn btn-outline">← সব লেখায় ফিরে যান</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

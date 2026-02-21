@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}যোগাযোগ | হাওলাদার এগ্রো{% endblock %}
+
+{% block content %}
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>যোগাযোগ করুন</h1>
+            <p>আমাদের সাথে যোগাযোগ করুন</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>যোগাযোগ তথ্য</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h3>ঠিকানা</h3>
+                                <p>ঢাকা, বাংলাদেশ</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                <h3>ইমেইল</h3>
+                                <p>info@hawladaragro.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">
+                                <h3>ফোন</h3>
+                                <p>+880 1XXX-XXXXXX</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div class="contact-text">
+                                <h3>কার্যসময়</h3>
+                                <p>শনি - বৃহঃ: ৯:০০ - ৬:০০</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h3>সোশ্যাল মিডিয়া</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" aria-label="Facebook">Facebook</a>
+                            <a href="#" class="social-icon" aria-label="YouTube">YouTube</a>
+                            <a href="#" class="social-icon" aria-label="Instagram">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h2 data-lang-en="Send Message" data-lang-bn="বার্তা পাঠান">বার্তা পাঠান</h2>
+                    <form class="contact-form" method="post" action="">
+                        <div class="form-group">
+                            <label for="name" data-lang-en="Name" data-lang-bn="নাম">নাম</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-lang-en="Email" data-lang-bn="ইমেইল">ইমেইল</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-lang-en="Phone" data-lang-bn="ফোন">ফোন</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-lang-en="Subject" data-lang-bn="বিষয়">বিষয়</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-lang-en="Message" data-lang-bn="বার্তা">বার্তা</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" data-lang-en="Send Message" data-lang-bn="বার্তা পাঠান">বার্তা পাঠান</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

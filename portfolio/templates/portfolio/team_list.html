@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}আমাদের দল | হাওলাদার এগ্রো{% endblock %}
+
+{% block content %}
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>আমাদের দল</h1>
+            <p>আমাদের অভিজ্ঞ দল সম্পর্কে জানুন</p>
+        </div>
+    </section>
+
+    <!-- Team Grid -->
+    <section class="team-page-section">
+        <div class="container">
+            <div class="team-grid">
+                {% for member in team_members %}
+                <div class="team-card">
+                    <div class="team-photo">
+                        {% if member.photo %}
+                        <img src="{{ member.photo.url }}" alt="{{ member.name }}">
+                        {% else %}
+                        <img src="{% static 'images/placeholder-logo.svg' %}" alt="{{ member.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="team-info">
+                        <h3>{{ member.name }}</h3>
+                        <p class="team-role">{{ member.role_display|default:member.get_role_display }}</p>
+                        {% if member.bio %}
+                        <p class="team-bio">{{ member.bio }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% empty %}
+                <div class="empty-state">
+                    <p>কোন দল সদস্য পাওয়া যায়নি।</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

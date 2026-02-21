@@ -1,0 +1,383 @@
+{% extends 'base.html' %}
+
+{% block title %}Hawlader Agro | Project Amar{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-lang-en="Project Amar: Your Cow, Our Care, Shared Prosperity" data-lang-bn="প্রজেক্ট আমার: আপনার খামার, আমাদের যত্ন, সমৃদ্ধি সবার।">প্রজেক্ট আমার: আপনার খামার, আমাদের যত্ন, সমৃদ্ধি সবার।</h1>
+                <p class="hero-subtitle" data-lang-en="The First Shariah-Compliant 'Cow Hotel' in Bangladesh. Invest in high-yield livestock from home, monitor via our Live Dashboard, and earn ethical returns through a transparent 3-way profit split." data-lang-bn="বাংলাদেশের প্রথম শরীয়াহ সম্মত 'কাউ হোটেল' (Cow Hotel)। ঘর বসেই উন্নত জাতের গবাদিপশুতে বিনিয়োগ করুন, লাইভ ড্যাশবোর্ড মনিটর করুন এবং ৩-মুখী মুনাফা বন্টন পদ্ধতিতে হালাল আয় নিশ্চিত করুন।">বাংলাদেশের প্রথম শরীয়াহ সম্মত 'কাউ হোটেল' (Cow Hotel)। ঘর বসেই উন্নত জাতের গবাদিপশুতে বিনিয়োগ করুন, লাইভ ড্যাশবোর্ড মনিটর করুন এবং ৩-মুখী মুনাফা বন্টন পদ্ধতিতে হালাল আয় নিশ্চিত করুন।</p>
+                <div class="hero-buttons">
+                    <a href="{% url 'portfolio:investment' %}" class="btn btn-primary" data-lang-en="Start Halal Investment" data-lang-bn="হালাল বিনিয়োগ শুরু করুন">হালাল বিনিয়োগ শুরু করুন</a>
+                    <a href="#dashboard" class="btn btn-secondary" data-lang-en="View Live Dashboard" data-lang-bn="লাইভ ড্যাশবোর্ড দেখুন">লাইভ ড্যাশবোর্ড দেখুন</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Amar Location Section -->
+    <section class="project-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-lang-en="Project Amar Location" data-lang-bn="প্রজেক্ট আমার অবস্থান">প্রজেক্ট আমার অবস্থান</h2>
+            <div class="project-content">
+                <div class="project-image scroll-reveal-left">
+                    <img src="{% static 'images/logo.jpg' %}" alt="Hawlader Agro Project Amar" class="floating">
+                </div>
+                <div class="project-info scroll-reveal-right">
+                    <p class="highlight-text" data-lang-en="Location: Patuakhali, Barishal. Farm Size: 1 Bigha + 1 Acre (Leased). Capacity: 50 Bulls." data-lang-bn="অবস্থান: পটুয়াখালী, বরিশাল। খামারের পরিমাণ: ১ বিঘা, গোশালার জাম ১ একর (লীজ)। খামারের ক্যাপাসিটি: ৫০ ফসবু।">অবস্থান: পটুয়াখালী, বরিশাল। খামারের পরিমাণ: ১ বিঘা, গোশালার জাম ১ একর (লীজ)। খামারের ক্যাপাসিটি: ৫০ ফসবু।</p>
+                    <p data-lang-en="Follow our journey: https://www.facebook.com/HawladerAgro.bd" data-lang-bn="আমাদের যাত্রা অনুসরণ করুন: https://www.facebook.com/HawladerAgro.bd">আমাদের যাত্রা অনুসরণ করুন: https://www.facebook.com/HawladerAgro.bd</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Livestock Quality Section -->
+    <section class="livestock-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-lang-en="Our Livestock Quality" data-lang-bn="আমাদের গরুর মান">আমাদের গরুর মান</h2>
+            <div class="livestock-content">
+                <div class="livestock-image scroll-reveal-left">
+                    <img src="{% static 'images/farm_cow.jpg' %}" alt="Hawlader Agro Healthy Cattle">
+                </div>
+                <div class="livestock-info scroll-reveal-right">
+                    <h3 data-lang-en="Quality Livestock Management" data-lang-bn="মানসম্মত পশুপালন">মানসম্মত পশুপালন</h3>
+                    <p data-lang-en="At our farm, we raise healthy, strong, and high-quality cattle. Each cow is cared for professionally." data-lang-bn="আমাদের খামারে আমরা সুস্থ, সবল এবং উন্নত জাতের গরু পালন করি। প্রতিটি গরুর যত্ন নেওয়া হয় পেশাদার উপায়ে।">আমাদের খামারে আমরা সুস্থ, সবল এবং উন্নত জাতের গরু পালন করি। প্রতিটি গরুর যত্ন নেওয়া হয় পেশাদার উপায়ে।</p>
+                    <ul class="livestock-features">
+                        <li data-lang-en="Balanced nutrition and feed" data-lang-bn="সুষম খাদ্য ও পুষ্টি">✓ সুষম খাদ্য ও পুষ্টি</li>
+                        <li data-lang-en="Regular health checkups" data-lang-bn="নিয়মিত স্বাস্থ্য পরীক্ষা">✓ নিয়মিত স্বাস্থ্য পরীক্ষা</li>
+                        <li data-lang-en="Clean and organized environment" data-lang-bn="পরিচ্ছন্ন ও সুশৃঙ্খল পরিবেশ">✓ পরিচ্ছন্ন ও সুশৃঙ্খল পরিবেশ</li>
+                        <li data-lang-en="Expert caretaker supervision" data-lang-bn="অভিজ্ঞ পশুপালকদের তত্ত্বাবধান">✓ অভিজ্ঞ পশুপালকদের তত্ত্বাবধান</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Features Section -->
+    <section id="dashboard" class="facilities-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-lang-en="Trust Through Technology - The Amar Dashboard" data-lang-bn="প্রযুক্তির মাধ্যমে আস্থা - আমার ড্যাশবোর্ড">প্রযুক্তির মাধ্যমে আস্থা - আমার ড্যাশবোর্ড</h2>
+            <div class="facilities-content">
+                <div class="facility-card scroll-reveal stagger-1">
+                    <div class="facility-icon">📹</div>
+                    <div class="facility-info">
+                        <h3 data-lang-en="Live CCTV Feed" data-lang-bn="লাইভ সিসিটিভি (CCTV)">লাইভ সিসিটিভি (CCTV)</h3>
+                        <p data-lang-en="24/7 visual access to your designated cattle pen. Verify your asset's existence and condition anytime." data-lang-bn="আপনার পশুর শেড-এর ২৪/৭ সরাসরি ভিডিও। যেকানা সময় আপনার সম্পদের অস্তিত্ব ও অবস্থা যাচাই করুন।">আপনার পশুর শেড-এর ২৪/৭ সরাসরি ভিডিও। যেকানা সময় আপনার সম্পদের অস্তিত্ব ও অবস্থা যাচাই করুন।</p>
+                    </div>
+                </div>
+                <div class="facility-card scroll-reveal stagger-2">
+                    <div class="facility-icon">💉</div>
+                    <div class="facility-info">
+                        <h3 data-lang-en="Digital Health Card" data-lang-bn="ডিজিটাল হেলথ কার্ড">ডিজিটাল হেলথ কার্ড</h3>
+                        <p data-lang-en="Scanned records of vaccines (FMD, Anthrax) and vet visits. Proof of proper medical care and biosecurity." data-lang-bn="টিকা (তড়কা, ক্ষুরা) এবং ডাক্তারের ভিজিটর রেকর্ড। পশুর সঠিক চিকিৎসা ও স্বাস্থ্য সুরক্ষা নিশ্চিতর প্রমাণ।">টিকা (তড়কা, ক্ষুরা) এবং ডাক্তারের ভিজিটর রেকর্ড। পশুর সঠিক চিকিৎসা ও স্বাস্থ্য সুরক্ষা নিশ্চিতর প্রমাণ।</p>
+                    </div>
+                </div>
+                <div class="facility-card scroll-reveal stagger-3">
+                    <div class="facility-icon">📊</div>
+                    <div class="facility-info">
+                        <h3 data-lang-en="Weight Graph" data-lang-bn="ওজন গ্রাফ">ওজন গ্রাফ</h3>
+                        <p data-lang-en="Bi-weekly weight measurements uploaded by digital scale. Track the exact growth trajectory of your investment." data-lang-bn="ডিজিটাল স্কেল মাপা পশুর ওজন প্রতি দুই সপ্তাহ আপডেট। আপনার বিনিয়োগের সঠিক বৃদ্ধি পয়েবক্ষণ করুন।">ডিজিটাল স্কেল মাপা পশুর ওজন প্রতি দুই সপ্তাহ আপডেট। আপনার বিনিয়োগের সঠিক বৃদ্ধি পয়েবক্ষণ করুন।</p>
+                    </div>
+                </div>
+                <div class="facility-card scroll-reveal stagger-4">
+                    <div class="facility-icon">📋</div>
+                    <div class="facility-info">
+                        <h3 data-lang-en="Feed Log" data-lang-bn="খাদ্য তালিকা">খাদ্য তালিকা</h3>
+                        <p data-lang-en="Daily breakdown of TMR (Total Mixed Ration) consumption. Transparency on where your operational costs are going." data-lang-bn="দিনক টিএমআর (TMR) বা সুষম খাবার গ্রহণের বিবরণ। আপনার পশুর পেছনে কতটুকু খরচ হচ্ছ তার স্বচ্ছ হিসাব।">দিনক টিএমআর (TMR) বা সুষম খাবার গ্রহণের বিবরণ। আপনার পশুর পেছনে কতটুকু খরচ হচ্ছ তার স্বচ্ছ হিসাব।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder & Vision Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-content">
+                <div class="trust-image scroll-reveal-left">
+                    <img src="{% static 'images/owner_with_cattle.jpg' %}" alt="Founder with Cattle">
+                </div>
+                <div class="trust-info scroll-reveal-right">
+                    <h2 class="section-title" data-lang-en="Founder & Vision" data-lang-bn="প্রতিষ্ঠাতা ও দর্শন">প্রতিষ্ঠাতা ও দর্শন</h2>
+                    <p class="highlight-text" data-lang-en="Hawlader Agro is led by Naeem Billah, a certified agro-specialist trained at the prestigious Youth Training Center (YTC), Savar." data-lang-bn="হাওলাদার এগ্রা-এর নেতৃত্বে আছেন নাইম বিল্লাহ, যিনি যুব প্রশিক্ষণ কেন্দ্র (YTC), সাভার থেকে প্রশিক্ষত একজন সার্টিফাইড কৃষি বিশেষজ্ঞ।">হাওলাদার এগ্রা-এর নেতৃত্বে আছেন নাইম বিল্লাহ, যিনি যুব প্রশিক্ষণ কেন্দ্র (YTC), সাভার থেকে প্রশিক্ষত একজন সার্টিফাইড কৃষি বিশেষজ্ঞ।</p>
+                    <p data-lang-en="Having completed the rigorous 3-month residential curriculum in Livestock Rearing & Primary Veterinary Treatment, our leadership combines government-standard technical training with modern business acumen." data-lang-bn="তিনি গবাদিপশু পালন ও প্রাথমিক চিকিৎসার ওপর ৩ মাস মেয়াদী কোর্সের আবাসিক প্রশিক্ষণ সম্পন্ন করেছেন। সাধারণ এগ্রেগটরেদের মতো আমরা কেবল মধ্যস্থতাকারী নই, আমরা নিজেরাই খামারি।">তিনি গবাদিপশু পালন ও প্রাথমিক চিকিৎসার ওপর ৩ মাস মেয়াদী কোর্সের আবাসিক প্রশিক্ষণ সম্পন্ন করেছেন। সাধারণ এগ্রেগটরেদের মতো আমরা কেবল মধ্যস্থতাকারী নই, আমরা নিজেরাই খামারি।</p>
+                    <p data-lang-en="Our founder's expertise spans from formulating Total Mixed Ration (TMR) feeds for maximum weight gain to implementing biosecurity protocols that prevent FMD (Foot & Mouth Disease). We don't just manage money; we manage life." data-lang-bn="আমাদের প্রতিষ্ঠাতার টিএমআর (TMR) বা সুষম মিশ্র পশুখাদ্য তৈরি থেকে শুরু করে ক্ষুরারোগ (FMD) প্রতিরোধ বায়োসিকিউরিটি মেইনটেইন করার ব্যবস্থা রয়েছ অভিজ্ঞতা। আমরা কেবল আপনার অর্থের ব্যবস্থাপনাই করি না, আমরা আপনার সম্পদের যত্ন নিই।">আমাদের প্রতিষ্ঠাতার টিএমআর (TMR) বা সুষম মিশ্র পশুখাদ্য তৈরি থেকে শুরু করে ক্ষুরারোগ (FMD) প্রতিরোধ বায়োসিকিউরিটি মেইনটেইন করার ব্যবস্থা রয়েছ অভিজ্ঞতা। আমরা কেবল আপনার অর্থের ব্যবস্থাপনাই করি না, আমরা আপনার সম্পদের যত্ন নিই।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Grid -->
+    {% if featured_projects %}
+    <section class="featured-projects-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">আমাদের বর্তমান প্রজেক্ট</h2>
+            <div class="projects-grid">
+                {% for project in featured_projects %}
+                <div class="project-card scroll-reveal stagger-{{ forloop.counter }}">
+                    <div class="project-card-image">
+                        {% if project.hero_image %}
+                        <img src="{{ project.hero_image.url }}" alt="{{ project.name }}">
+                        {% else %}
+                        <img src="{% static 'images/placeholder-project.svg' %}" alt="{{ project.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="project-card-content">
+                        <h3>{{ project.name }}</h3>
+                        <p class="project-location">{{ project.location }}</p>
+                        <p class="project-acreage">{{ project.acreage }} একর</p>
+                        <a href="{% url 'portfolio:project_detail' project.slug %}" class="btn btn-sm">বিস্তারিত দেখুন</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                <a href="{% url 'portfolio:project_list' %}" class="btn btn-outline">সব প্রজেক্ট দেখুন</a>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Investment Models Section -->
+    <section class="investment-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-lang-en="Investment Models" data-lang-bn="বিনিয়োগ মডেল">বিনিয়োগ মডেল</h2>
+            <div class="investment-content">
+                <div class="investment-card scroll-reveal stagger-1">
+                    <div class="icon">🐂</div>
+                    <h3 data-lang-en="Model A: Eid Fattening Project (Short-Term)" data-lang-bn="মডেল এ: ঈদ মাটাতাজাকরণ প্রকল্প (স্বল্পমেয়াদী)">মডেল এ: ঈদ মাটাতাজাকরণ প্রকল্প (স্বল্পমেয়াদী)</h3>
+                    <p data-lang-en="Maximize Returns with the Eid Cycle. Structure: Mudarabah (Profit Sharing). Target daily weight gain: 800g to 1.2kg. Projected ROI: 15-25% per cycle." data-lang-bn="ঈদ চক্রের মাধ্যমে সর্বোচ্চ লাভ। কাঠামো: মুদারাবা (লাভ-ক্ষত বন্টন)। লক্ষ্য দৈনিক ওজন বৃদ্ধি: ৮০০ গ্রাম থেকে ১.২ কেজি। সম্ভাব্য মুনাফা: চক্র প্রতি ১৫-২৫%।">ঈদ চক্রের মাধ্যমে সর্বোচ্চ লাভ। কাঠামো: মুদারাবা (লাভ-ক্ষত বন্টন)। লক্ষ্য দৈনিক ওজন বৃদ্ধি: ৮০০ গ্রাম থেকে ১.২ কেজি। সম্ভাব্য মুনাফা: চক্র প্রতি ১৫-২৫%।</p>
+                </div>
+                <div class="investment-card scroll-reveal stagger-2">
+                    <div class="icon">🐄</div>
+                    <h3 data-lang-en="Model B: Heritage Dairy Project (Long-Term)" data-lang-bn="মডেল বি: হেরিটেজ ডেইরি ও প্রজনন প্রকল্প (দীর্ঘমেয়াদী)">মডেল বি: হেরিটেজ ডেইরি ও প্রজনন প্রকল্প (দীর্ঘমেয়াদী)</h3>
+                    <p data-lang-en="Sustainable Wealth via Dairy & Breeding. Structure: Long-term Mudarabah / Musharakah. Monthly passive income from milk sales + lump-sum return from calf/cow sale." data-lang-bn="ডেইরি ও প্রজননের মাধ্যমে টেকসই সম্পদ। কাঠামো: দীর্ঘমেয়াদী মুদারাবা / মুশারাকা। দুধ বিক্রি থেকে মাসিক আয় এবং বাছুর বা গাভী বিক্রির মাধ্যমে এককালীন লাভ।">ডেইরি ও প্রজননের মাধ্যমে টেকসই সম্পদ। কাঠামো: দীর্ঘমেয়াদী মুদারাবা / মুশারাকা। দুধ বিক্রি থেকে মাসিক আয় এবং বাছুর বা গাভী বিক্রির মাধ্যমে এককালীন লাভ।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3-Way Profit Split Section -->
+    <section class="investment-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-lang-en="The 3-Way Profit Split" data-lang-bn="৩-মুখী মুনাফা বন্টন">৩-মুখী মুনাফা বন্টন</h2>
+            <div class="investment-content">
+                <div class="investment-card scroll-reveal stagger-1">
+                    <div class="icon">💼</div>
+                    <h3 data-lang-en="50% to You (Investor)" data-lang-bn="৫০% আপনার (বিনিয়োগকারী)">৫০% আপনার (বিনিয়োগকারী)</h3>
+                    <p data-lang-en="Capital Provider (Rab-ul-Maal). You take the financial risk. Your capital buys the calf, the feed, and the medicine." data-lang-bn="পুঁজি বিনিয়োগকারী (রব-উল-মাল)। আপনি আর্থিক ঝুঁকি নেন। আপনার পুঁজি বাছুর, খাদ্য এবং ওষুধ কেনে।">পুঁজি বিনিয়োগকারী (রব-উল-মাল)। আপনি আর্থিক ঝুঁকি নেন। আপনার পুঁজি বাছুর, খাদ্য এবং ওষুধ কেনে।</p>
+                </div>
+                <div class="investment-card scroll-reveal stagger-2">
+                    <div class="icon">🏢</div>
+                    <h3 data-lang-en="40% to Hawlader Agro (Manager)" data-lang-bn="৪০% হাওলাদার এগ্রা (ব্যবস্থাপক)">৪০% হাওলাদার এগ্রা (ব্যবস্থাপক)</h3>
+                    <p data-lang-en="Manager (Mudarib). We provide the facility (The 'Hotel'), the veterinary expertise, the feed logistics, and the market access." data-lang-bn="ব্যবস্থাপক (মুদারিব)। আমরা সুবিধা ('হোটেল'), ভেটেরিনারি দক্ষতা, খাদ্য লজিস্টিক্স এবং বাজার সুযোগ প্রদান করি।">ব্যবস্থাপক (মুদারিব)। আমরা সুবিধা ('হোটেল'), ভেটেরিনারি দক্ষতা, খাদ্য লজিস্টিক্স এবং বাজার সুযোগ প্রদান করি।</p>
+                </div>
+                <div class="investment-card scroll-reveal stagger-3">
+                    <div class="icon">👨‍🌾</div>
+                    <h3 data-lang-en="10% to the Caretaker (Staff)" data-lang-bn="১০% যত্নকারী (কর্মী)">১০% যত্নকারী (কর্মী)</h3>
+                    <p data-lang-en="Labor Partner. The specific staff member assigned to your cow receives a direct profit share. This aligns their motivation with your asset's health." data-lang-bn="শ্রম অংশীদার। আপনার গরুর জন্য নির্দিষ্ট কর্মী সরাসরি মুনাফার ভাগ পান। এটি তাদের উৎসাহকে আপনার সম্পদের স্বাস্থ্যের সাথে সামঞ্জস্য করে।">শ্রম অংশীদার। আপনার গরুর জন্য নির্দিষ্ট কর্মী সরাসরি মুনাফার ভাগ পান। এটি তাদের উৎসাহকে আপনার সম্পদের স্বাস্থ্যের সাথে সামঞ্জস্য করে।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Management Section -->
+    <section class="investment-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-lang-en="Shariah-Compliant Risk Management" data-lang-bn="শরীয়াহ সম্মত ঝুঁকি ব্যবস্থাপনা">শরীয়াহ সম্মত ঝুঁকি ব্যবস্থাপনা</h2>
+            <div class="investment-content">
+                <div class="investment-card scroll-reveal stagger-1">
+                    <div class="icon">🛡️</div>
+                    <h3 data-lang-en="Mortality Risk" data-lang-bn="মৃত্যু ঝুঁকি">মৃত্যু ঝুঁকি</h3>
+                    <p data-lang-en="Comprehensive Insurance coverage protects your capital in case of animal death (excluding natural calamities)." data-lang-bn="অনাকালক্ষত মৃত্যুজনিত ক্ষতি পূরণর জন্য প্রতিটি পশুর বীমা (Insurance) করা থাকে।">অনাকালক্ষত মৃত্যুজনিত ক্ষতি পূরণর জন্য প্রতিটি পশুর বীমা (Insurance) করা থাকে।</p>
+                </div>
+                <div class="investment-card scroll-reveal stagger-2">
+                    <div class="icon">📊</div>
+                    <h3 data-lang-en="Market Risk" data-lang-bn="বাজার ঝুঁকি">বাজার ঝুঁকি</h3>
+                    <p data-lang-en="We mitigate price volatility by establishing forward-contracts with institutional meat buyers." data-lang-bn="আমরা বড় মাংস প্রক্রিয়াজাতকরণ প্রতিষ্ঠানের সাথে আগাম চুক্তি (Forward Contract) করার মাধ্যমে দামের ওঠানামা নিয়ন্ত্রণ করি।">আমরা বড় মাংস প্রক্রিয়াজাতকরণ প্রতিষ্ঠানের সাথে আগাম চুক্তি (Forward Contract) করার মাধ্যমে দামের ওঠানামা নিয়ন্ত্রণ করি।</p>
+                </div>
+                <div class="investment-card scroll-reveal stagger-3">
+                    <div class="icon">🔒</div>
+                    <h3 data-lang-en="Operational Risk" data-lang-bn="পরিচালনাগত ঝুঁকি">পরিচালনাগত ঝুঁকি</h3>
+                    <p data-lang-en="Our 'Cow Hotel' is a closed bio-secure facility, drastically reducing the risk of theft or contagious diseases compared to open grazing." data-lang-bn="আমাদের 'কাউ হোটেল' একটি আবদ্ধ বায়ো-সিকিউর জান, ফলে উন্মুক্ত চারণভূমির তুলনায় এখানে চুরি বা সংক্রামক রোগের ঝুঁকি অনেক কম।">আমাদের 'কাউ হোটেল' একটি আবদ্ধ বায়ো-সিকিউর জান, ফলে উন্মুক্ত চারণভূমির তুলনায় এখানে চুরি বা সংক্রামক রোগের ঝুঁকি অনেক কম।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Opportunities -->
+    {% if investment_opportunities %}
+    <section class="investment-opportunities-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">বিনিয়োগের সুযোগ</h2>
+            <div class="opportunities-grid">
+                {% for opportunity in investment_opportunities %}
+                <div class="opportunity-card scroll-reveal stagger-{{ forloop.counter }}">
+                    <div class="opportunity-header">
+                        <h3>{{ opportunity.title }}</h3>
+                        <span class="badge badge-success">সক্রিয়</span>
+                    </div>
+                    <div class="opportunity-body">
+                        <p>{{ opportunity.description }}</p>
+                        <div class="opportunity-stats">
+                            <div class="stat">
+                                <span class="stat-label">মোট শেয়ার</span>
+                                <span class="stat-value">{{ opportunity.total_shares }}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">উপলব্ধ শেয়ার</span>
+                                <span class="stat-value">{{ opportunity.available_shares }}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">প্রতি শেয়ার</span>
+                                <span class="stat-value">৳{{ opportunity.price_per_share }}</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: {{ opportunity.percentage_sold }}%"></div>
+                        </div>
+                        <p class="progress-text">{{ opportunity.percentage_sold|floatformat:0 }}% বিক্রি হয়েছে</p>
+                    </div>
+                    <div class="opportunity-footer">
+                        <a href="{% url 'portfolio:investment' %}" class="btn btn-primary btn-block">বিনিয়োগ করুন</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Media Section -->
+    {% if media_appearances %}
+    <section class="media-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">মিডিয়াতে আমরা</h2>
+            <div class="media-logos">
+                {% for media in media_appearances %}
+                <div class="media-logo-item scroll-reveal stagger-{{ forloop.counter }}">
+                    {% if media.logo %}
+                    <img src="{{ media.logo.url }}" alt="{{ media.outlet_name }}">
+                    {% else %}
+                    <span>{{ media.outlet_name }}</span>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Team Section -->
+    {% if featured_team %}
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">আমাদের দল</h2>
+            <div class="team-grid">
+                {% for member in featured_team %}
+                <div class="team-card scroll-reveal stagger-{{ forloop.counter }}">
+                    <div class="team-photo">
+                        {% if member.photo %}
+                        <img src="{{ member.photo.url }}" alt="{{ member.name }}">
+                        {% else %}
+                        <img src="{% static 'images/our_expert.jpg' %}" alt="{{ member.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="team-info">
+                        <h3>{{ member.name }}</h3>
+                        <p class="team-role">{{ member.role_display|default:member.get_role_display }}</p>
+                        {% if member.bio %}
+                        <p class="team-bio">{{ member.bio|truncatewords:20 }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                <a href="{% url 'portfolio:team_list' %}" class="btn btn-outline">সব সদস্য দেখুন</a>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Gallery Section -->
+    {% if gallery_images %}
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">গ্যালারি</h2>
+            <div class="gallery-grid">
+                {% for image in gallery_images %}
+                <div class="gallery-item scroll-reveal stagger-{{ forloop.counter }}">
+                    <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                    <div class="gallery-overlay">
+                        <h4>{{ image.title }}</h4>
+                        {% if image.description %}
+                        <p>{{ image.description|truncatewords:10 }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                <a href="{% url 'portfolio:gallery' %}" class="btn btn-outline">সব ছবি দেখুন</a>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Blog Section -->
+    {% if latest_blogs %}
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">আমাদের লেখা</h2>
+            <div class="blog-grid">
+                {% for post in latest_blogs %}
+                <article class="blog-card scroll-reveal stagger-{{ forloop.counter }}">
+                    <div class="blog-image">
+                        {% if post.featured_image %}
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        {% else %}
+                        <img src="{% static 'images/placeholder-blog.svg' %}" alt="{{ post.title }}">
+                        {% endif %}
+                    </div>
+                    <div class="blog-content">
+                        <h3>{{ post.title }}</h3>
+                        <p class="blog-excerpt">{{ post.excerpt }}</p>
+                        <a href="{% url 'portfolio:blog_detail' post.slug %}" class="btn btn-sm">আরও পড়ুন</a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                <a href="{% url 'portfolio:blog_list' %}" class="btn btn-outline">সব লেখা দেখুন</a>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Shariah Compliance Section -->
+    <section class="crowdfunding-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-lang-en="Shariah Compliance" data-lang-bn="শরীয়াহ সম্মতা">শরীয়াহ সম্মতা</h2>
+            <div class="crowdfunding-content">
+                <p class="highlight-text scroll-reveal" data-lang-en="Project Amar operates under the principles of Mudarabah. Unlike a bank Fixed Deposit (FDR) where returns are guaranteed (Interest/Riba), here we share in both profits and risks." data-lang-bn="প্রজেক্ট আমার মুদারাবা নীতির ভিত্তে পরিচালিত। ব্যাংকের ফিক্সড ডিপাজিট (FDR)-এর মেতা এখানে মুনাফা সুনিশ্চিত নয় (যা সুদ বা রিবা হিসেবে গণ্য); বরং আমরা লাভ এবং ঝুঁকি উভয়ই ভাগ করে নিই।">প্রজেক্ট আমার মুদারাবা নীতির ভিত্তে পরিচালিত। ব্যাংকের ফিক্সড ডিপাজিট (FDR)-এর মেতা এখানে মুনাফা সুনিশ্চিত নয় (যা সুদ বা রিবা হিসেবে গণ্য); বরং আমরা লাভ এবং ঝুঁকি উভয়ই ভাগ করে নিই।</p>
+                <p class="scroll-reveal" data-lang-en="Disclaimer: While we strive for profit, the investor bears the financial loss of capital if it occurs due to market conditions, while the manager bears the loss of their labor." data-lang-bn="সতর্কথা: আমরা মুনাফার জন্য সর্বোচ্চ চেষ্টা করি, কিন্তুতু বাজার পরিস্থিতির কারণে ব্যবসায় লাকসান হলে শরীয়াহ নিয়ম অনুযায়ী বিনিয়োগকারীকে আর্থিক ক্ষতি বহন করতে হয় এবং ব্যবস্থাপক তাদের শ্রম ও সময়ের মূল্য হারান।">সতর্কথা: আমরা মুনাফার জন্য সর্বোচ্চ চেষ্টা করি, কিন্তুতু বাজার পরিস্থিতির কারণে ব্যবসায় লাকসান হলে শরীয়াহ নিয়ম অনুযায়ী বিনিয়োগকারীকে আর্থিক ক্ষতি বহন করতে হয় এবং ব্যবস্থাপক তাদের শ্রম ও সময়ের মূল্য হারান।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <div class="location-content">
+                <img src="{% static 'images/logo.jpg' %}" alt="Hawlader Agro" class="floating scroll-reveal">
+                <p class="scroll-reveal" data-lang-en="Project Amar is located in Patuakhali, Barishal, Bangladesh" data-lang-bn="প্রজেক্ট আমার অবস্থিত হাওলাদার এগ্রা, পটুয়াখালী, বরিশাল, বাংলাদেশ">প্রজেক্ট আমার অবস্থিত হাওলাদার এগ্রা, পটুয়াখালী, বরিশাল, বাংলাদেশ</p>
+                <a href="https://www.facebook.com/HawladerAgro.bd" target="_blank" class="btn btn-primary scroll-reveal" data-lang-en="Follow us on Facebook" data-lang-bn="ফেসবুকে আমাদের অনুসরণ করুন">ফেসবুকে আমাদের অনুসরণ করুন</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

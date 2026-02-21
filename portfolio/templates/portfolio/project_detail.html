@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ project.name }} | হাওলাদার এগ্রো{% endblock %}
+
+{% block content %}
+    <!-- Page Header -->
+    <section class="page-header project-detail-header">
+        <div class="container">
+            <div class="project-header-content">
+                <div class="project-header-text">
+                    <span class="project-status badge badge-{{ project.status }}">{{ project.get_status_display }}</span>
+                    <h1>{{ project.name }}</h1>
+                    <p class="project-location">{{ project.location }}</p>
+                    <p class="project-acreage">{{ project.acreage }} একর</p>
+                </div>
+                <div class="project-header-image">
+                    {% if project.hero_image %}
+                    <img src="{{ project.hero_image.url }}" alt="{{ project.name }}">
+                    {% else %}
+                    <img src="{% static 'images/placeholder-project.svg' %}" alt="{{ project.name }}">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-overview-section">
+        <div class="container">
+            <h2>প্রজেক্ট সম্পর্কে</h2>
+            <div class="project-overview-content">
+                <div class="project-description">
+                    <p>{{ project.description }}</p>
+                    {% if project.details %}
+                    <p>{{ project.details }}</p>
+                    {% endif %}
+                </div>
+                
+                {% if project.overview_image %}
+                <div class="project-overview-image">
+                    <img src="{{ project.overview_image.url }}" alt="{{ project.name }} ওভারভিউ">
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    {% if project.crops or project.livestock %}
+    <section class="project-details-section">
+        <div class="container">
+            <h2>প্রজেক্টের বিস্তারিত</h2>
+            <div class="project-details-grid">
+                {% if project.crops %}
+                <div class="detail-card">
+                    <div class="detail-icon">🌾</div>
+                    <h3>ফসল</h3>
+                    <p>{{ project.crops }}</p>
+                </div>
+                {% endif %}
+                
+                {% if project.livestock %}
+                <div class="detail-card">
+                    <div class="detail-icon">🐄</div>
+                    <h3>পশুপালন</h3>
+                    <p>{{ project.livestock }}</p>
+                </div>
+                {% endif %}
+                
+                {% if project.lease_years %}
+                <div class="detail-card">
+                    <div class="detail-icon">📜</div>
+                    <h3>লিজ সময়কাল</h3>
+                    <p>{{ project.lease_years }} বছর</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Investment Opportunities -->
+    {% if project.investment_opportunities.all %}
+    <section class="project-investment-section">
+        <div class="container">
+            <h2>বিনিয়োগের সুযোগ</h2>
+            <div class="investment-opportunities-grid">
+                {% for opportunity in project.investment_opportunities.all %}
+                <div class="opportunity-card">
+                    <div class="opportunity-header">
+                        <h3>{{ opportunity.title }}</h3>
+                        {% if opportunity.is_active %}
+                        <span class="badge badge-success">সক্রিয়</span>
+                        {% else %}
+                        <span class="badge badge-secondary">বন্ধ</span>
+                        {% endif %}
+                    </div>
+                    <div class="opportunity-body">
+                        <p>{{ opportunity.description }}</p>
+                        <div class="opportunity-stats">
+                            <div class="stat">
+                                <span class="stat-label">মোট শেয়ার</span>
+                                <span class="stat-value">{{ opportunity.total_shares }}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">উপলব্ধ শেয়ার</span>
+                                <span class="stat-value">{{ opportunity.available_shares }}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">প্রতি শেয়ার</span>
+                                <span class="stat-value">৳{{ opportunity.price_per_share }}</span>
+                            </div>
+                        </div>
+                        {% if opportunity.expected_return %}
+                        <p class="expected-return"><strong>প্রত্যাশিত রিটার্ন:</strong> {{ opportunity.expected_return }}</p>
+                        {% endif %}
+                        {% if opportunity.investment_duration %}
+                        <p class="investment-duration"><strong>বিনিয়োগ সময়কাল:</strong> {{ opportunity.investment_duration }}</p>
+                        {% endif %}
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: {{ opportunity.percentage_sold }}%"></div>
+                        </div>
+                        <p class="progress-text">{{ opportunity.percentage_sold|floatformat:0 }}% বিক্রি হয়েছে</p>
+                    </div>
+                    <div class="opportunity-footer">
+                        {% if opportunity.is_active %}
+                        <a href="{% url 'portfolio:investment' %}" class="btn btn-primary btn-block">বিনিয়োগ করুন</a>
+                        {% else %}
+                        <button class="btn btn-secondary btn-block" disabled>বন্ধ</button>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Project Gallery -->
+    {% if project.gallery_images.all %}
+    <section class="project-gallery-section">
+        <div class="container">
+            <h2>প্রজেক্ট গ্যালারি</h2>
+            <div class="gallery-grid">
+                {% for image in project.gallery_images.all %}
+                <div class="gallery-item">
+                    <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                    <div class="gallery-overlay">
+                        <h4>{{ image.title }}</h4>
+                        {% if image.description %}
+                        <p>{{ image.description|truncatewords:10 }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Back to Projects -->
+    <section class="back-section">
+        <div class="container">
+            <a href="{% url 'portfolio:project_list' %}" class="btn btn-outline">← সব প্রজেক্টে ফিরে যান</a>
+        </div>
+    </section>
+{% endblock %}

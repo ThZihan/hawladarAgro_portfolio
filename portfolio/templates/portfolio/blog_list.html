@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}আমাদের লেখা | হাওলাদার এগ্রো{% endblock %}
+
+{% block content %}
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>আমাদের লেখা</h1>
+            <p>কৃষি ও খামার সম্পর্কিত আমাদের লেখা ও আর্টিকেল</p>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-page-section">
+        <div class="container">
+            <div class="blog-grid">
+                {% for post in posts %}
+                <article class="blog-card">
+                    <div class="blog-image">
+                        {% if post.featured_image %}
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        {% else %}
+                        <img src="{% static 'images/placeholder-blog.svg' %}" alt="{{ post.title }}">
+                        {% endif %}
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-date">{{ post.published_at|date:"d F, Y" }}</p>
+                        <h3>{{ post.title }}</h3>
+                        <p class="blog-excerpt">{{ post.excerpt }}</p>
+                        <a href="{% url 'portfolio:blog_detail' post.slug %}" class="btn btn-primary">আরও পড়ুন</a>
+                    </div>
+                </article>
+                {% empty %}
+                <div class="empty-state">
+                    <p>কোন লেখা পাওয়া যায়নি।</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            {% if is_paginated %}
+            <div class="pagination">
+                <div class="pagination-links">
+                    {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link">আগে</a>
+                    {% endif %}
+                    
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                        <span class="pagination-link active">{{ num }}</span>
+                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <a href="?page={{ num }}" class="pagination-link">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="pagination-link">পরে</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}
