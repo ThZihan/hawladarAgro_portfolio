@@ -27,8 +27,9 @@ db.sqlite3
 db.sqlite3-journal
 /media/
 /staticfiles/
+/public_html/
 # Note: /static/ is now included in git for production deployment
-# Only exclude staticfiles/ which is the collectstatic output
+# Only exclude staticfiles/ and public_html/ which are collectstatic outputs
 
 # Environment
 .env
