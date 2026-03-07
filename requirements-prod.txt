@@ -1,0 +1,16 @@
+# Production requirements for Hawladar Agro Django project
+# Includes base requirements plus production-specific packages
+
+-r requirements.txt
+
+# Production WSGI server
+gunicorn==21.2.0
+
+# Static file serving
+whitenoise==6.6.0
+
+# Security
+django-cors-headers==4.3.1
+
+# Email
+django-anymail==10.2

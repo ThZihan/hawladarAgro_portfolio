@@ -4,9 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
-venv/
-ENV/
 build/
 develop-eggs/
 dist/
@@ -28,9 +25,19 @@ wheels/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-/media
-/staticfiles
+/media/
+/staticfiles/
+# Note: /static/ is now included in git for production deployment
+# Only exclude staticfiles/ which is the collectstatic output
+
+# Environment
 .env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
 # IDE
 .vscode/
@@ -43,5 +50,28 @@ db.sqlite3-journal
 .DS_Store
 Thumbs.db
 
-# Template/Old files (moved to template folder)
-template/
+# Temporary files
+*.tmp
+*.temp
+pdf_images/
+screencapture-*.png
+screencapture-*.pdf
+convert_*.py
+
+# Screenshots
+Screenshot*.jpg
+Screenshot*.png
+Untitled.png
+Untitled.jpg
+
+# Documentation PDFs (keep in docs/ if needed)
+*.pdf
+
+# Logs
+logs/
+*.log
+
+# Backup files
+*.bak
+*.backup
+backups/

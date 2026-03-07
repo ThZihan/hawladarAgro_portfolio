@@ -7,6 +7,61 @@ document.addEventListener('DOMContentLoaded', function() {
     'use strict';
     
     // ===================================
+    // Dashboard Chart Animations
+    // ===================================
+    function animateCharts() {
+        // Animate bar charts
+        const barFills = document.querySelectorAll('.bar-fill');
+        barFills.forEach((bar, index) => {
+            const width = bar.style.width;
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.width = width;
+            }, 100 + (index * 100));
+        });
+        
+        // Animate health score circle
+        const healthScoreCircle = document.querySelector('.health-score-svg circle:last-of-type');
+        if (healthScoreCircle) {
+            const dashOffset = healthScoreCircle.getAttribute('stroke-dashoffset');
+            healthScoreCircle.style.strokeDashoffset = '314';
+            setTimeout(() => {
+                healthScoreCircle.style.transition = 'stroke-dashoffset 1.5s ease-out';
+                healthScoreCircle.style.strokeDashoffset = dashOffset;
+            }, 300);
+        }
+    }
+    
+    // Run chart animations when dashboard is visible
+    const dashboardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCharts();
+                dashboardObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    
+    const dashboardSection = document.getElementById('dashboard');
+    if (dashboardSection) {
+        dashboardObserver.observe(dashboardSection);
+    }
+    
+    // ===================================
+    // Dashboard Card Hover Effects
+    // ===================================
+    const dashboardCards = document.querySelectorAll('.dashboard-card');
+    dashboardCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-4px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // ===================================
     // Mobile Menu Toggle
     // ===================================
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -67,18 +122,37 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update HTML lang attribute
         htmlElement.setAttribute('lang', lang === 'bn' ? 'bn-BD' : 'en');
         htmlElement.setAttribute('data-lang', lang);
-        
+
         // Update all elements with data-lang attributes
         const elements = document.querySelectorAll('[data-lang-en], [data-lang-bn]');
         elements.forEach(element => {
             const text = element.getAttribute(`data-lang-${lang}`);
             if (text) {
+                // Check if element has an img child (for badges with icons)
+                const img = element.querySelector('img');
+                if (img) {
+                    // Remove all existing text nodes
+                    const childNodes = Array.from(element.childNodes);
+                    childNodes.forEach(node => {
+                        if (node.nodeType === Node.TEXT_NODE) {
+                            node.remove();
+                        }
+                    });
+                    // Add a single text node after the img
+                    const textNode = document.createTextNode(text);
+                    element.appendChild(textNode);
+                }
                 // Check if element has a span child (for buttons with icons)
-                const span = element.querySelector('span');
-                if (span) {
+                else if (element.querySelector('span')) {
+                    const span = element.querySelector('span');
                     span.textContent = text;
                 } else {
-                    element.textContent = text;
+                    // Check if text contains HTML tags
+                    if (text.includes('<')) {
+                        element.innerHTML = text;
+                    } else {
+                        element.textContent = text;
+                    }
                 }
             }
         });
@@ -387,7 +461,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===================================
     // Card Hover Effects with 3D Tilt
     // ===================================
-    const cards = document.querySelectorAll('.project-card, .investment-card, .blog-card, .team-card');
+    const cards = document.querySelectorAll('.project-card, .blog-card, .team-card');
     
     cards.forEach(card => {
         card.addEventListener('mousemove', function(e) {
@@ -700,6 +774,120 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // ===================================
+    // Login Modal
+    // ===================================
+    const loginBtn = document.getElementById('loginBtn');
+    const loginModal = document.getElementById('loginModal');
+    const loginModalBackdrop = document.getElementById('loginModalBackdrop');
+    const loginModalClose = document.getElementById('loginModalClose');
+    const loginForm = document.getElementById('loginForm');
+    const passwordToggle = document.getElementById('passwordToggle');
+    const loginPassword = document.getElementById('loginPassword');
+    
+    // Open modal
+    if (loginBtn && loginModal) {
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openLoginModal();
+        });
+    }
+    
+    // Close modal
+    if (loginModalClose && loginModal) {
+        loginModalClose.addEventListener('click', closeLoginModal);
+    }
+    
+    // Close modal when clicking on backdrop
+    if (loginModalBackdrop && loginModal) {
+        loginModalBackdrop.addEventListener('click', closeLoginModal);
+    }
+    
+    // Close modal on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && loginModal && loginModal.classList.contains('active')) {
+            closeLoginModal();
+        }
+    });
+    
+    // Password toggle
+    if (passwordToggle && loginPassword) {
+        passwordToggle.addEventListener('click', function() {
+            const type = loginPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            loginPassword.setAttribute('type', type);
+            
+            // Toggle eye icons
+            const eyeOpen = passwordToggle.querySelector('.eye-open');
+            const eyeClosed = passwordToggle.querySelector('.eye-closed');
+            
+            if (type === 'text') {
+                eyeOpen.style.display = 'none';
+                eyeClosed.style.display = 'block';
+            } else {
+                eyeOpen.style.display = 'block';
+                eyeClosed.style.display = 'none';
+            }
+        });
+    }
+    
+    // Form submission
+    if (loginForm && loginModal) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+            
+            // Basic validation
+            if (!email || !password) {
+                showNotification('Please fill in all fields', 'error');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNotification('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // Here you would typically send the form data to your backend
+            // For now, we'll just show a success message
+            console.log('Login attempt:', { email, rememberMe });
+            showNotification('Login successful! Redirecting...', 'success');
+            
+            // Close modal after successful login
+            setTimeout(() => {
+                closeLoginModal();
+                loginForm.reset();
+            }, 1500);
+        });
+    }
+    
+    function openLoginModal() {
+        if (loginModal) {
+            loginModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Focus on email input
+            setTimeout(() => {
+                const emailInput = document.getElementById('loginEmail');
+                if (emailInput) {
+                    emailInput.focus();
+                }
+            }, 100);
+        }
+    }
+    
+    function closeLoginModal() {
+        if (loginModal) {
+            loginModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
 });
 
 // ===================================

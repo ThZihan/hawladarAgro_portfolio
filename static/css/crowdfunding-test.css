@@ -1,0 +1,563 @@
+/* ===================================
+   CROWDFUNDING SECTION - BEAUTIFIED DESIGN
+   =================================== */
+
+.crowdfunding-section {
+    position: relative;
+    background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 50%, #DBEAFE 100%);
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.crowdfunding-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.crowdfunding-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 25% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 75% 70%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.04) 0%, transparent 50%);
+    background-size: 150px 150px;
+    animation: crowdfundingPatternFloat 30s ease-in-out infinite;
+}
+
+@keyframes crowdfundingPatternFloat {
+    0%, 100% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+.crowdfunding-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(59, 130, 246, 0.03) 100%);
+    opacity: 0.4;
+}
+
+/* Header */
+.crowdfunding-header {
+    text-align: center;
+    margin-bottom: 64px;
+    position: relative;
+    z-index: 2;
+}
+
+.crowdfunding-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #ffffff;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #10B981;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    border: 1px solid #D1FAE5;
+    animation: crowdfundingBadgeFloat 3s ease-in-out infinite;
+}
+
+@keyframes crowdfundingBadgeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.crowdfunding-badge svg {
+    color: #10B981;
+}
+
+.crowdfunding-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 8px 0;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.crowdfunding-header p {
+    font-size: 18px;
+    color: #4B5563;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* Layout */
+.crowdfunding-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Content Wrapper (Left Side) */
+.crowdfunding-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    order: 1;
+}
+
+.crowdfunding-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Cards */
+.crowdfunding-card {
+    background: linear-gradient(145deg, #ffffff 0%, #F8FAFC 100%);
+    border-radius: 24px;
+    padding: 32px;
+    overflow: hidden;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.02),
+        0 10px 20px rgba(0, 0, 0, 0.05),
+        0 0 0 1px rgba(16, 185, 129, 0.1);
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.crowdfunding-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #10B981, #3B82F6, #F59E0B, #10B981);
+    background-size: 300% 100%;
+    animation: crowdfundingCardGradientSlide 4s linear infinite;
+}
+
+.crowdfunding-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+    opacity: 0;
+    transition: all 500ms;
+}
+
+@keyframes crowdfundingCardGradientSlide {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 300% 50%;
+    }
+}
+
+.crowdfunding-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 
+        0 20px 40px rgba(16, 185, 129, 0.15),
+        0 0 0 1px rgba(16, 185, 129, 0.2),
+        inset 0 0 30px rgba(16, 185, 129, 0.03);
+}
+
+.crowdfunding-card:hover::after {
+    opacity: 1;
+}
+
+.crowdfunding-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    border: none;
+    border-radius: 16px;
+    color: #ffffff;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
+}
+
+.crowdfunding-card:hover .crowdfunding-card-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 24px rgba(16, 185, 129, 0.4);
+}
+
+.crowdfunding-card-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.crowdfunding-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+    position: relative;
+}
+
+.crowdfunding-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #10B981, #3B82F6);
+    border-radius: 2px;
+    transition: all 300ms;
+}
+
+.crowdfunding-card:hover h3::after {
+    width: 60px;
+}
+
+.crowdfunding-card p {
+    font-size: 15px;
+    color: #6B7280;
+    line-height: 1.8;
+    margin: 16px 0 0 0;
+}
+
+.crowdfunding-card .highlight-text {
+    font-size: 15px;
+    color: #065F46;
+    font-weight: 500;
+    background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 50%, #A7F3D0 100%);
+    padding: 20px;
+    border-radius: 16px;
+    border-left: 4px solid #10B981;
+    position: relative;
+    overflow: hidden;
+    transition: all 300ms;
+    margin-top: 16px;
+}
+
+.crowdfunding-card .highlight-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: crowdfundingHighlightShimmer 3s ease-in-out infinite;
+}
+
+.crowdfunding-card .highlight-text::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 18px;
+    opacity: 0.6;
+}
+
+@keyframes crowdfundingHighlightShimmer {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+.crowdfunding-card:hover .highlight-text {
+    transform: translateX(8px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
+    background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+}
+
+/* Disclaimer Card */
+.crowdfunding-disclaimer {
+    background: #FEF3C7;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.crowdfunding-disclaimer .disclaimer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #F59E0B;
+    border-radius: 8px;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.crowdfunding-disclaimer .disclaimer-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.crowdfunding-disclaimer .disclaimer-content {
+    flex: 1;
+}
+
+.crowdfunding-disclaimer h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #92400E;
+    margin: 0 0 4px 0;
+}
+
+.crowdfunding-disclaimer p {
+    font-size: 13px;
+    color: #92400E;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Trust Features */
+.crowdfunding-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.crowdfunding-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #F8FAFC;
+    border-radius: 12px;
+    transition: all 300ms;
+}
+
+.crowdfunding-feature:hover {
+    background: #DBEAFE;
+    transform: translateX(8px);
+}
+
+.crowdfunding-feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #D1FAE5 0%, #BFDBFE 100%);
+    border-radius: 10px;
+    color: #3B82F6;
+    flex-shrink: 0;
+}
+
+.crowdfunding-feature-text {
+    font-size: 14px;
+    color: #4B5563;
+    font-weight: 500;
+}
+
+.crowdfunding-feature span {
+    color: #10B981;
+    font-weight: 600;
+}
+
+/* CTA Button */
+.crowdfunding-cta {
+    text-align: center;
+}
+
+.crowdfunding-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 300ms;
+}
+
+.crowdfunding-cta .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
+
+.crowdfunding-cta .btn svg {
+    color: #ffffff;
+}
+
+/* Visual Section (Right Side - Image) */
+.crowdfunding-visual {
+    position: relative;
+    order: 2;
+}
+
+.crowdfunding-image-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crowdfunding-image {
+    position: relative;
+    max-width: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.crowdfunding-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(16, 185, 129, 0.25);
+}
+
+.crowdfunding-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+
+
+.crowdfunding-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+    pointer-events: none;
+}
+
+/* Floating Badge */
+.crowdfunding-badge-floating {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+    border-radius: 12px;
+    animation: crowdfundingBadgeFloat 3s ease-in-out infinite;
+}
+
+@keyframes crowdfundingBadgeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.crowdfunding-badge-floating .badge-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+.crowdfunding-badge-floating .badge-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.crowdfunding-badge-floating .badge-label {
+    font-size: 12px;
+    color: #6B7280;
+    font-weight: 500;
+}
+
+.crowdfunding-badge-floating .badge-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #10B981;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .crowdfunding-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .crowdfunding-content-wrapper {
+        order: 1;
+    }
+    
+    .crowdfunding-visual {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .crowdfunding-section {
+        padding: 48px 0;
+    }
+    
+    .crowdfunding-header {
+        margin-bottom: 40px;
+    }
+    
+    .crowdfunding-card h3 {
+        font-size: 18px;
+    }
+    
+    .crowdfunding-card p {
+        font-size: 14px;
+    }
+    
+    .crowdfunding-features {
+        gap: 12px;
+    }
+    
+    .crowdfunding-feature {
+        padding: 12px;
+    }
+    
+    .crowdfunding-badge-floating {
+        top: 20px;
+        right: 20px;
+        padding: 10px 12px;
+    }
+}

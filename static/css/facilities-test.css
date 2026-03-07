@@ -1,0 +1,2149 @@
+/* ===================================
+   FACILITIES SECTION - BEAUTIFIED DESIGN
+   =================================== */
+
+.facilities-section {
+    position: relative;
+    background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 50%, #FEF3C7 100%);
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.facilities-section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.facilities-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 90%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+    background-size: 120px 120px;
+    animation: facilitiesPatternFloat 25s ease-in-out infinite;
+}
+
+@keyframes facilitiesPatternFloat {
+    0%, 100% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+.facilities-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(59, 130, 246, 0.03) 100%);
+    opacity: 0.3;
+}
+
+/* Header */
+.facilities-header {
+    text-align: center;
+    margin-bottom: 64px;
+    position: relative;
+    z-index: 2;
+}
+
+.facilities-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #ffffff;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3B82F6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    border: 1px solid #DBEAFE;
+    animation: facilitiesBadgeFloat 3s ease-in-out infinite;
+}
+
+@keyframes facilitiesBadgeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.facilities-badge svg {
+    color: #3B82F6;
+}
+
+.facilities-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 8px 0;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.facilities-header p {
+    font-size: 18px;
+    color: #4B5563;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.dashboard-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #3B82F6, #10B981, #F59E0B);
+    background-size: 200% 200%;
+    animation: cardGradientSlide 4s linear infinite;
+}
+
+@keyframes cardGradientSlide {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+.dashboard-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+}
+
+/* Card Span Classes */
+.dashboard-card-span-3 {
+    grid-column: span 3;
+}
+
+.dashboard-card-span-1 {
+    grid-column: span 1;
+}
+
+/* Dashboard Card Header */
+.dashboard-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: linear-gradient(135deg, #F8FAFC 0%, #F3F4F6 100%);
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.dashboard-card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dashboard-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+    border-radius: 12px;
+    color: #3B82F6;
+    flex-shrink: 0;
+    transition: all 300ms;
+}
+
+.dashboard-card:hover .dashboard-card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.dashboard-card-title h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.dashboard-card-title p {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+}
+
+/* CCTV Monitor Section */
+.cctv-monitor {
+    position: relative;
+    height: 180px;
+    background: linear-gradient(180deg, #1F2937 0%, #111827 100%);
+    border-radius: 0 0 24px 24px;
+    overflow: hidden;
+}
+
+.cctv-screen {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cctv-feed {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms;
+}
+
+.cctv-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(31, 41, 55, 0.3) 0%, rgba(17, 24, 39, 0.6) 100%);
+    pointer-events: none;
+}
+
+.cctv-timestamp {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    animation: timestampPulse 2s ease-in-out infinite;
+}
+
+@keyframes timestampPulse {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.cctv-timestamp svg {
+    color: #10B981;
+}
+
+.current-time {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.cctv-location {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.cctv-location svg {
+    color: #F59E0B;
+}
+
+.cctv-recording {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(239, 68, 68, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    animation: recordingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes recordingPulse {
+    0%, 100% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.cctv-recording svg {
+    color: #EF4444;
+}
+
+/* Live Indicator */
+.live-indicator {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: rgba(16, 185, 129, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 9999px;
+    animation: liveIndicatorPulse 2s ease-in-out infinite;
+}
+
+@keyframes liveIndicatorPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 10px 0 rgba(16, 185, 129, 0.8);
+    }
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #10B981;
+    border-radius: 50%;
+    animation: dotPulse 1s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+/* CCTV Controls */
+.cctv-controls {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+}
+
+.cctv-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #ffffff;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.cctv-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.cctv-btn-active {
+    background: #10B981;
+    border-color: #10B981;
+}
+
+.cctv-btn svg {
+    color: #ffffff;
+}
+
+/* Chart Section */
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.chart-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chart-stat-label {
+    font-size: 14px;
+    color: #6B7280;
+    font-weight: 500;
+}
+
+.chart-stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #10B981;
+}
+
+.chart-change {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    background: #D1FAE5;
+    border-radius: 8px;
+    color: #10B981;
+    font-size: 14px;
+    font-weight: 600;
+    animation: chartChangePulse 2s ease-in-out infinite;
+}
+
+@keyframes chartChangePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.chart-change svg {
+    color: #10B981;
+}
+
+.weight-chart {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(135deg, #F8FAFC 0%, #F3F4F6 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.chart-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+    color: #6B7280;
+    font-weight: 500;
+}
+
+/* Feed Consumption Card - Modern Design */
+.feed-icon {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%) !important;
+    color: #10b981 !important;
+}
+
+.feed-trend-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #10b981;
+    animation: trendPulse 3s ease-in-out infinite;
+}
+
+@keyframes trendPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.feed-chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feed-compact-stats {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+    border-radius: 8px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.feed-stat-circle {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+}
+
+.feed-progress-ring {
+    width: 100%;
+    height: 100%;
+    animation: progressRotate 2s ease-out;
+}
+
+@keyframes progressRotate {
+    from {
+        transform: rotate(-90deg);
+    }
+    to {
+        transform: rotate(-90deg);
+    }
+}
+
+.feed-stat-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.feed-stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #10b981;
+    line-height: 1;
+}
+
+.feed-stat-unit {
+    font-size: 9px;
+    font-weight: 500;
+    color: #6B7280;
+}
+
+.feed-stat-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.feed-detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 0;
+    border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.feed-detail-item:last-child {
+    border-bottom: none;
+}
+
+.feed-detail-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #6B7280;
+}
+
+.feed-detail-value {
+    font-size: 11px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.feed-weekly-chart {
+    padding: 6px;
+    background: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #E5E7EB;
+}
+
+.chart-days {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 5px;
+    height: 38px;
+}
+
+.chart-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex: 1;
+    cursor: pointer;
+    transition: all 300ms;
+    padding: 1px;
+    border-radius: 3px;
+}
+
+.chart-day:hover {
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.chart-day.active {
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.day-bar {
+    width: 14px;
+    background: linear-gradient(180deg, #10b981 0%, #34D399 100%);
+    border-radius: 2px 2px 0 0;
+    transition: all 300ms;
+    position: relative;
+}
+
+.day-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px 2px 0 0;
+}
+
+.day-bar-active {
+    background: linear-gradient(180deg, #059669 0%, #10b981 100%);
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+}
+
+.day-label {
+    font-size: 9px;
+    font-weight: 500;
+    color: #9CA3AF;
+}
+
+.day-label-active {
+    font-size: 9px;
+    font-weight: 600;
+    color: #10b981;
+}
+
+/* Vaccination Card - Modern Design */
+.vaccine-icon {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%) !important;
+    color: #3B82F6 !important;
+}
+
+.vaccine-status-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3B82F6;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: statusDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusDotPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+.vaccination-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vaccination-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+    background: #F9FAFB;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    transition: all 300ms;
+}
+
+.vaccination-item:hover {
+    background: #F3F4F6;
+    transform: translateX(4px);
+}
+
+.vaccination-item.vaccine-complete {
+    border-left: 3px solid #10b981;
+}
+
+.vaccination-item.vaccine-pending {
+    border-left: 3px solid #F59E0B;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+}
+
+.vaccine-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #ffffff;
+    border-radius: 10px;
+    flex-shrink: 0;
+    color: #10b981;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.vaccine-icon-wrapper.pending-icon {
+    color: #F59E0B;
+    animation: pendingPulse 2s ease-in-out infinite;
+}
+
+@keyframes pendingPulse {
+    0%, 100% {
+        box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+    }
+    50% {
+        box-shadow: 0 2px 16px rgba(245, 158, 11, 0.4);
+    }
+}
+
+.vaccination-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.vaccination-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.vaccination-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.vaccination-tag {
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.complete-tag {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+.pending-tag {
+    background: rgba(245, 158, 11, 0.15);
+    color: #F59E0B;
+}
+
+.vaccination-date {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+.vaccination-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar-small {
+    flex: 1;
+    height: 6px;
+    background: rgba(245, 158, 11, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill-small {
+    height: 100%;
+    background: linear-gradient(90deg, #F59E0B 0%, #FBBF24 100%);
+    border-radius: 3px;
+    animation: progressFill 1.5s ease-out;
+}
+
+@keyframes progressFill {
+    from {
+        width: 0;
+    }
+}
+
+.pending-date {
+    font-size: 12px;
+    font-weight: 600;
+    color: #F59E0B;
+}
+
+/* Activity Timeline Card - Modern Design */
+.activity-icon {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 100%) !important;
+    color: #8B5CF6 !important;
+}
+
+.activity-refresh-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 8px;
+    color: #8B5CF6;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.activity-refresh-btn:hover {
+    background: rgba(139, 92, 246, 0.2);
+    transform: rotate(180deg);
+}
+
+.activity-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    background: #F9FAFB;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    transition: all 300ms;
+    position: relative;
+}
+
+.activity-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    border-radius: 12px 0 0 12px;
+    transition: all 300ms;
+}
+
+.activity-item.activity-success::before {
+    background: #10b981;
+}
+
+.activity-item.activity-info::before {
+    background: #3B82F6;
+}
+
+.activity-item.activity-warning::before {
+    background: #F59E0B;
+}
+
+.activity-item:hover {
+    background: #F3F4F6;
+    transform: translateX(4px);
+}
+
+.activity-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #ffffff;
+    border-radius: 8px;
+    flex-shrink: 0;
+    color: #10b981;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 300ms;
+}
+
+.activity-item:hover .activity-icon-wrapper {
+    transform: scale(1.1);
+}
+
+.activity-icon-wrapper.info-icon {
+    color: #3B82F6;
+}
+
+.activity-icon-wrapper.warning-icon {
+    color: #F59E0B;
+    animation: warningPulse 2s ease-in-out infinite;
+}
+
+@keyframes warningPulse {
+    0%, 100% {
+        box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+    }
+    50% {
+        box-shadow: 0 2px 16px rgba(245, 158, 11, 0.4);
+    }
+}
+
+.activity-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.activity-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.4;
+}
+
+.activity-badge {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.success-badge {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+.info-badge {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3B82F6;
+}
+
+.warning-badge {
+    background: rgba(245, 158, 11, 0.15);
+    color: #F59E0B;
+}
+
+.activity-time {
+    font-size: 11px;
+    color: #9CA3AF;
+    font-weight: 500;
+}
+
+/* Health Metrics */
+.health-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.health-score-circle {
+    position: relative;
+    height: 100px;
+    background: linear-gradient(135deg, #F8FAFC 0%, #F3F4F6 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.health-score-svg {
+    width: 80px;
+    height: 80px;
+}
+
+.health-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.health-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    background: #F8FAFC;
+    border-radius: 8px;
+    transition: all 300ms;
+}
+
+.health-item:hover {
+    background: #DBEAFE;
+    transform: translateX(4px);
+}
+
+.health-item-label {
+    font-size: 12px;
+    color: #6B7280;
+    font-weight: 500;
+}
+
+.health-item-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.health-item-status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.health-item-status.status-good {
+    background: #D1FAE5;
+    color: #10B981;
+}
+
+.health-item-status svg {
+    color: #10B981;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .dashboard-card-span-3 {
+        grid-column: span 2;
+    }
+    
+    .dashboard-card-span-1 {
+        grid-column: span 1;
+    }
+    
+    .health-score-circle {
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .facilities-section {
+        padding: 48px 0;
+    }
+    
+    .facilities-header {
+        margin-bottom: 40px;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-card-span-3,
+    .dashboard-card-span-1 {
+        grid-column: span 1;
+    }
+    
+    .dashboard-card-header {
+        padding: 16px;
+    }
+    
+    .dashboard-card-title h3 {
+        font-size: 18px;
+    }
+    
+    .chart-stat-value {
+        font-size: 20px;
+    }
+    
+    .health-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* ===================================
+   FEED CONSUMPTION CARD - REDESIGNED
+   =================================== */
+
+.feed-chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.feed-weekly-ring {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+    border-radius: 16px;
+    position: relative;
+}
+
+.ring-chart {
+    position: relative;
+}
+
+.ring-svg {
+    width: 120px;
+    height: 120px;
+}
+
+.ring-stats {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.ring-stat {
+    text-align: right;
+}
+
+.ring-stat-label {
+    font-size: 11px;
+    color: #6B7280;
+    font-weight: 500;
+}
+
+.ring-stat-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #10B981;
+}
+
+.feed-daily-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feed-breakdown-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: #F8FAFC;
+    border-radius: 12px;
+}
+
+.breakdown-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.breakdown-trend {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.breakdown-trend.positive {
+    background: #D1FAE5;
+    color: #10B981;
+}
+
+.breakdown-trend svg {
+    color: #10B981;
+}
+
+.feed-days-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.feed-day-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    background: #ffffff;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.feed-day-card:hover {
+    border-color: #10B981;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.15);
+}
+
+.feed-day-today {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    border-color: #10B981;
+    color: #ffffff;
+}
+
+.feed-day-today .day-value,
+.feed-day-today .day-unit {
+    color: #ffffff;
+}
+
+.day-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #6B7280;
+    margin-bottom: 4px;
+}
+
+.feed-day-today .day-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.day-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
+}
+
+.day-unit {
+    font-size: 10px;
+    font-weight: 500;
+    color: #9CA3AF;
+    margin-top: 2px;
+}
+
+/* ===================================
+   VACCINATION STATUS CARD - REDESIGNED
+   =================================== */
+
+.vaccination-status-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+}
+
+.vaccination-ring {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+    border-radius: 16px;
+}
+
+.vaccination-svg {
+    width: 100px;
+    height: 100px;
+}
+
+.vaccination-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vaccination-item-new {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #F8FAFC;
+    border-radius: 12px;
+    transition: all 300ms;
+    border: 1px solid transparent;
+}
+
+.vaccination-item-new:hover {
+    background: #F0FDF4;
+    border-color: #10B981;
+    transform: translateX(4px);
+}
+
+.vaccine-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    transition: all 300ms;
+}
+
+.vaccine-completed {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: #ffffff;
+}
+
+.vaccine-pending {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    color: #ffffff;
+}
+
+.vaccine-badge svg {
+    color: #ffffff;
+}
+
+.vaccine-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.vaccine-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.vaccine-status {
+    font-size: 12px;
+    font-weight: 500;
+    color: #10B981;
+}
+
+.vaccine-status-pending {
+    color: #F59E0B;
+}
+
+/* ===================================
+   ACTIVITY TIMELINE CARD - REDESIGNED
+   =================================== */
+
+.activity-timeline-new {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+}
+
+.activity-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 12px;
+    background: linear-gradient(135deg, #F8FAFC 0%, #F3F4F6 100%);
+    border-radius: 12px;
+}
+
+.activity-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 8px;
+    background: #ffffff;
+    border-radius: 10px;
+    transition: all 300ms;
+}
+
+.activity-stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.activity-stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    transition: all 300ms;
+}
+
+.activity-stat-success {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: #ffffff;
+}
+
+.activity-stat-info {
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    color: #ffffff;
+}
+
+.activity-stat-warning {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    color: #ffffff;
+}
+
+.activity-stat-icon svg {
+    color: #ffffff;
+}
+
+.activity-stat-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.activity-stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.activity-stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #6B7280;
+}
+
+.activity-timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.activity-item-new {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #F8FAFC;
+    border-radius: 10px;
+    transition: all 300ms;
+    border-left: 3px solid transparent;
+}
+
+.activity-item-new:hover {
+    background: #F0FDF4;
+    border-left-color: #10B981;
+    transform: translateX(4px);
+}
+
+.activity-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    transition: all 300ms;
+}
+
+.activity-icon-feeding {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: #ffffff;
+}
+
+.activity-icon-health {
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    color: #ffffff;
+}
+
+.activity-icon-cleaning {
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    color: #ffffff;
+}
+
+.activity-icon-water {
+    background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+    color: #ffffff;
+}
+
+.activity-icon svg {
+    color: #ffffff;
+}
+
+.activity-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.activity-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.3;
+}
+
+.activity-time {
+    font-size: 11px;
+    font-weight: 500;
+    color: #6B7280;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN FOR NEW CARDS
+   =================================== */
+
+@media (max-width: 1024px) {
+    .feed-days-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .feed-day-card:nth-child(4),
+    .feed-day-card:nth-child(5) {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .feed-days-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+    
+    .feed-day-card {
+        padding: 10px 6px;
+    }
+    
+    .day-value {
+        font-size: 16px;
+    }
+    
+    /* ===================================
+       UPDATED FEED CONSUMPTION CARD STYLES
+       =================================== */
+    
+    /* Feed Trend Indicator */
+    .feed-trend-indicator {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+        border-radius: 9999px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #10B981;
+        animation: trendPulse 3s ease-in-out infinite;
+    }
+    
+    @keyframes trendPulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+    }
+    
+    .feed-trend-indicator svg {
+        color: #10B981;
+    }
+    
+    /* Feed Stats Grid */
+    .feed-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+    
+    .feed-stat-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 16px;
+        background: linear-gradient(135deg, #F8FAFC 0%, #F3F4F6 100%);
+        border-radius: 14px;
+        transition: all 300ms;
+        border: 1px solid #E5E7EB;
+    }
+    
+    .feed-stat-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+    
+    .feed-stat-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        flex-shrink: 0;
+        transition: all 300ms;
+    }
+    
+    .feed-stat-today .feed-stat-icon {
+        background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        color: #ffffff;
+    }
+    
+    .feed-stat-average .feed-stat-icon {
+        background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+        color: #ffffff;
+    }
+    
+    .feed-stat-icon svg {
+        color: #ffffff;
+    }
+    
+    .feed-stat-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .feed-stat-label {
+        font-size: 11px;
+        font-weight: 500;
+        color: #6B7280;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .feed-stat-value {
+        font-size: 18px;
+        font-weight: 700;
+        color: #111827;
+        line-height: 1;
+    }
+    
+    /* Bar Chart Updates */
+    .bar-chart {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .bar-chart-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 0;
+        border-bottom: 1px solid #F3F4F6;
+    }
+    
+    .bar-chart-row:last-child {
+        border-bottom: none;
+    }
+    
+    .bar-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: #6B7280;
+        width: 45px;
+        flex-shrink: 0;
+    }
+    
+    .bar-container {
+        flex: 1;
+        height: 24px;
+        background: #F3F4F6;
+        border-radius: 6px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .bar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #10B981 0%, #059669 100%);
+        border-radius: 6px;
+        transition: width 500ms ease-out;
+        position: relative;
+    }
+    
+    .bar-fill::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 6px 6px 0 0;
+    }
+    
+    .bar-fill-today {
+        background: linear-gradient(90deg, #3B82F6 0%, #2563EB 100%);
+    }
+    
+    .bar-fill-today::after {
+        background: rgba(255, 255, 255, 0.4);
+    }
+    
+    .bar-value {
+        font-size: 13px;
+        font-weight: 600;
+        color: #6B7280;
+        width: 50px;
+        text-align: right;
+        flex-shrink: 0;
+    }
+    
+    .bar-value-today {
+        color: #3B82F6;
+        font-weight: 700;
+    }
+    
+    /* Feed Chart Footer */
+    .feed-chart-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 12px;
+        border-top: 1px solid #E5E7EB;
+        margin-top: 8px;
+    }
+    
+    .chart-unit-label {
+        font-size: 11px;
+        font-weight: 500;
+        color: #9CA3AF;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .chart-legend {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #6B7280;
+    }
+    
+    .legend-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+    
+    .legend-dot-normal {
+        background: linear-gradient(90deg, #10B981 0%, #059669 100%);
+    }
+    
+    .legend-dot-today {
+        background: linear-gradient(90deg, #3B82F6 0%, #2563EB 100%);
+    }
+    
+    /* ===================================
+       UPDATED VACCINATION CARD STYLES
+       =================================== */
+    
+    /* Vaccination Badge */
+    .vaccination-badge {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        padding: 8px 14px;
+        background: linear-gradient(135deg, #F0FDF4 0%, #D1FAE5 100%);
+        border-radius: 12px;
+        border: 1px solid #A7F3D0;
+    }
+    
+    .vaccination-count {
+        font-size: 18px;
+        font-weight: 700;
+        color: #10B981;
+        line-height: 1;
+    }
+    
+    .vaccination-label {
+        font-size: 10px;
+        font-weight: 600;
+        color: #059669;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Vaccination List */
+    .vaccination-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px;
+    }
+    
+    .vaccination-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 16px;
+        background: #F8FAFC;
+        border-radius: 12px;
+        transition: all 300ms;
+        border: 1px solid transparent;
+    }
+    
+    .vaccination-item:hover {
+        background: #F0FDF4;
+        transform: translateX(4px);
+    }
+    
+    .vaccination-item-done {
+        border-left: 3px solid #10B981;
+    }
+    
+    .vaccination-item-upcoming {
+        border-left: 3px solid #F59E0B;
+        background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+    }
+    
+    .vaccination-item-upcoming:hover {
+        background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+    }
+    
+    .vaccination-icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        flex-shrink: 0;
+        transition: all 300ms;
+    }
+    
+    .vaccination-done {
+        background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        color: #ffffff;
+    }
+    
+    .vaccination-upcoming {
+        background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+        color: #ffffff;
+        animation: upcomingPulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes upcomingPulse {
+        0%, 100% {
+            box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.3);
+        }
+        50% {
+            box-shadow: 0 0 12px 4px rgba(245, 158, 11, 0.4);
+        }
+    }
+    
+    .vaccination-icon-wrapper svg {
+        color: #ffffff;
+    }
+    
+    .vaccination-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+    }
+    
+    .vaccination-name {
+        font-size: 14px;
+        font-weight: 600;
+        color: #111827;
+        line-height: 1.3;
+    }
+    
+    .vaccination-date {
+        font-size: 12px;
+        font-weight: 500;
+        color: #6B7280;
+    }
+    
+    .vaccination-date-upcoming {
+        color: #D97706;
+        font-weight: 600;
+    }
+    
+    /* ===================================
+       UPDATED ACTIVITY TIMELINE STYLES
+       =================================== */
+    
+    /* Activity Status Badge */
+    .activity-status-badge {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+        border-radius: 9999px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #10B981;
+    }
+    
+    .status-dot-active {
+        width: 8px;
+        height: 8px;
+        background: #10B981;
+        border-radius: 50%;
+        animation: statusDotPulse 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes statusDotPulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.3);
+        }
+    }
+    
+    /* Activity Timeline */
+    .activity-timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px;
+    }
+    
+    .activity-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 14px;
+        background: #F8FAFC;
+        border-radius: 12px;
+        transition: all 300ms;
+        border-left: 3px solid transparent;
+    }
+    
+    .activity-item:hover {
+        transform: translateX(4px);
+    }
+    
+    .activity-item-success {
+        border-left-color: #10B981;
+    }
+    
+    .activity-item-success:hover {
+        background: #F0FDF4;
+    }
+    
+    .activity-item-info {
+        border-left-color: #3B82F6;
+    }
+    
+    .activity-item-info:hover {
+        background: #DBEAFE;
+    }
+    
+    .activity-item-warning {
+        border-left-color: #F59E0B;
+    }
+    
+    .activity-item-warning:hover {
+        background: #FEF3C7;
+    }
+    
+    .activity-dot-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        flex-shrink: 0;
+        transition: all 300ms;
+    }
+    
+    .activity-item-success .activity-dot-wrapper {
+        background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        color: #ffffff;
+    }
+    
+    .activity-item-info .activity-dot-wrapper {
+        background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+        color: #ffffff;
+    }
+    
+    .activity-item-warning .activity-dot-wrapper {
+        background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+        color: #ffffff;
+    }
+    
+    .activity-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .activity-dot svg {
+        color: #ffffff;
+    }
+    
+    .activity-dot-success {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .activity-dot-info {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .activity-dot-warning {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .activity-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+    }
+    
+    .activity-text {
+        font-size: 13px;
+        font-weight: 600;
+        color: #111827;
+        line-height: 1.4;
+    }
+    
+    .activity-time {
+        font-size: 11px;
+        font-weight: 500;
+        color: #6B7280;
+    }
+    
+    /* ===================================
+       RESPONSIVE UPDATES
+       =================================== */
+    
+    @media (max-width: 768px) {
+        .feed-stats-grid {
+            gap: 8px;
+        }
+        
+        .feed-stat-card {
+            padding: 12px;
+        }
+        
+        .feed-stat-value {
+            font-size: 16px;
+        }
+        
+        .feed-chart-footer {
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
+        }
+        
+        .vaccination-list,
+        .activity-timeline {
+            padding: 12px;
+        }
+        
+        .vaccination-item,
+        .activity-item {
+            padding: 12px;
+        }
+    }
+    
+    .activity-summary {
+        gap: 6px;
+    }
+    
+    .activity-stat-item {
+        padding: 8px 6px;
+    }
+    
+    .activity-stat-value {
+        font-size: 16px;
+    }
+    
+    .activity-stat-label {
+        font-size: 9px;
+    }
+}
