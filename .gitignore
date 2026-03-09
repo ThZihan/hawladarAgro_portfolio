@@ -64,6 +64,10 @@ Screenshot*.jpg
 Screenshot*.png
 Untitled.png
 Untitled.jpg
+nanoEnvScreenshot*.jpg
+nanoEnvScreenshot*.png
+*cpanelFrintendPageScreenshot*
+*sshauthScreenshot*
 
 # Documentation PDFs (keep in docs/ if needed)
 *.pdf
