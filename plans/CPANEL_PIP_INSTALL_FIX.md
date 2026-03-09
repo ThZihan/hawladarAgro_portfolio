@@ -1,6 +1,6 @@
 # Fix cPanel Pip Install Error
 
-## Error
+## Error Message
 
 ```
 ERROR: Could not open requirements file: [Errno 21] Is a directory: 'hawladeragro.farm/'
@@ -8,86 +8,65 @@ ERROR: Could not open requirements file: [Errno 21] Is a directory: 'hawladeragr
 
 ## Root Cause
 
-cPanel is treating the application root as a directory path instead of a file path. The requirements file needs to be in the project directory.
+cPanel is treating the application root path incorrectly. The requirements file path needs to be specified without the application root prefix.
 
-## Solution
+## Solution: Install Dependencies via SSH
 
-### Option 1: Use cPanel's Built-in Virtual Environment (Recommended)
+Since cPanel's pip install is having issues, the best approach is to install dependencies via SSH directly in cPanel's virtual environment.
 
-cPanel has its own virtual environment. Use it directly:
+### Step 1: Pull Latest Changes
+
+```bash
+cd ~/hawladeragro.farm
+git pull origin main
+```
+
+### Step 2: Activate cPanel's Virtual Environment
+
+```bash
+source /home/kalobira/virtualenv/hawladeragro.farm/3.9/bin/activate
+```
+
+### Step 3: Install Dependencies
+
+```bash
+pip install -r requirements-cpanel.txt
+```
+
+### Step 4: Verify Installation
+
+```bash
+python manage.py check --settings=hawladar_agro.settings_prod
+```
+
+**Expected output:** `System check identified no issues (0 silenced).`
+
+### Step 5: Restart Application in cPanel
 
 1. In cPanel, go to **Setup Python App**
-2. Find your **hawladaragro.farm** application
-3. Click on **"Enter to virtual environment"** link
-4. Copy the command shown:
-   ```
-   source /home/kalobira/virtualenv/hawladeragro.farm/3.9/bin/activate && cd /home/kalobira/hawladeragro.farm
-   ```
-5. Paste this command in SSH terminal
-6. Install dependencies:
-   ```bash
-   pip install -r requirements-cpanel.txt
-   ```
+2. Find **hawladaragro.farm** application
+3. Click **Restart** button
 
-### Option 2: Install via SSH in cPanel's Virtual Environment
+### Step 6: Test Deployment
 
-1. Connect via SSH
-2. Activate cPanel's virtual environment:
-   ```bash
-   source /home/kalobira/virtualenv/hawladeragro.farm/3.9/bin/activate
-   cd /home/kalobira/hawladeragro.farm
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements-cpanel.txt
-   ```
-
-### Option 3: Install Each Package Individually via SSH
-
-If the above doesn't work, install each package separately:
-
-```bash
-# Activate cPanel's virtual environment
-source /home/kalobira/virtualenv/hawladeragro.farm/3.9/bin/activate
-cd /home/kalobira/hawladeragro.farm
-
-# Install each package individually
-pip install Django==4.2.11
-pip install django-environ==0.11.2
-pip install djangorestframework==3.14.0
-pip install psycopg2-binary==2.9.9
-pip install Pillow==10.2.0
-pip install gunicorn==21.2.0
-pip install whitenoise==6.6.0
-pip install django-cors-headers==4.3.1
-pip install django-anymail==10.2
-```
-
-### Option 4: Use requirements.txt File Instead
-
-Try using the existing `requirements-py39-prod.txt` file:
-
-```bash
-# Activate cPanel's virtual environment
-source /home/kalobira/virtualenv/hawladeragro.farm/3.9/bin/activate
-cd /home/kalobira/hawladeragro.farm
-
-# Install using existing requirements file
-pip install -r requirements-py39-prod.txt
-```
+Visit **https://hawladaragro.farm** - you should now see the Django application!
 
 ---
 
-## After Installing Dependencies
+## Alternative: Create .htaccess File
 
-1. In cPanel, go to **Setup Python App**
-2. Find your **hawladaragro.farm** application
-3. Click **Restart** button
-4. Wait for application to restart
+If the above doesn't work, create the `.htaccess` file:
 
-## Test Deployment
+```bash
+cd ~/hawladeragro.farm/public_html
+cat > .htaccess << 'EOF'
+PassengerEnabled on
+PassengerAppRoot /home/kalobira/hawladeragro.farm
+PassengerBaseURI /
+EOF
+```
 
-Visit **https://hawladaragro.farm** - you should now see the Django application!
+Then restart the application in cPanel.
 
 ---
 
@@ -95,45 +74,47 @@ Visit **https://hawladaragro.farm** - you should now see the Django application!
 
 ### Error: "ModuleNotFoundError: No module named 'django'"
 
-This means Django is not installed in cPanel's virtual environment. Use Option 1, 2, or 3 above to install it.
+This means Django is not installed. Run Step 3 above to install dependencies.
 
 ### Error: "ModuleNotFoundError: No module named 'environ'"
 
-This means django-environ is not installed. Use Option 1, 2, or 3 above to install it.
+This means django-environ is not installed. Run Step 3 above.
 
-### Error: "Permission denied" when installing
+### Error: "django.db.utils.OperationalError: FATAL: password authentication failed"
 
-You may need to use `sudo`:
-```bash
-sudo pip install -r requirements-cpanel.txt
+Check `.env` file has correct database credentials:
+```env
+DB_NAME=kalobira_hawladaragro_db
+DB_USER=kalobira_hawladaragro_user
+DB_PASSWORD=Zerin4321*
+DB_HOST=localhost
+DB_PORT=5432
 ```
 
-### Error: Still showing directory listing
+### Error: "DisallowedHost at / Invalid HTTP_HOST header"
+
+Check `.env` file has:
+```env
+ALLOWED_HOSTS=hawladaragro.farm,www.hawladaragro.farm
+```
+
+### Error: Still seeing directory listing
 
 Check Passenger logs:
-1. In cPanel Python App page, scroll down to **Logs** section
-2. Click on **passenger.log** or **passenger_error.log**
-3. Look for error messages
+```bash
+tail -f ~/hawladeragro.farm/logs/passenger_error.log
+```
 
 ---
 
 ## Quick Reference
 
-### Recommended Approach (Option 1):
-
-1. Copy the "Enter to virtual environment" command from cPanel
-2. Paste it in SSH terminal
-3. Run: `pip install -r requirements-cpanel.txt`
-4. Restart application in cPanel
-5. Test deployment
-
-### Alternative (Option 3):
-
-1. Connect via SSH
-2. Activate cPanel's virtual environment
-3. Install each package individually
-4. Restart application in cPanel
-5. Test deployment
+1. Pull latest changes: `cd ~/hawladeragro.farm && git pull origin main`
+2. Activate virtual environment: `source /home/kalobira/virtualenv/hawladeragro.farm/3.9/bin/activate`
+3. Install dependencies: `pip install -r requirements-cpanel.txt`
+4. Verify installation: `python manage.py check --settings=hawladar_agro.settings_prod`
+5. Restart application in cPanel
+6. Test deployment at https://hawladaragro.farm
 
 ---
 
